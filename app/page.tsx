@@ -4,11 +4,11 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className='min-h-screen p-10 lowercase'>
+      <main className='min-h-screen p-6 lowercase md:p-10'>
         <div className=''>
-          <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
+          <h1 className='mb-6 text-center text-5xl font-extrabold text-zinc-50 md:text-6xl'>
             Nice to meet you!
-            <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text font-bold text-transparent'>
+            <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
               {" I'm Vrishank"}
             </span>
           </h1>
