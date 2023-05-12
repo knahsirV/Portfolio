@@ -1,11 +1,12 @@
 import Navbar from "@/components/Navbar";
+import { ArrowPathIcon } from "@heroicons/react/20/solid";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main className='min-h-screen p-6 lowercase md:p-10'>
-        <div className=''>
+        <div className='mb-16'>
           <h1 className='mb-6 text-center text-5xl font-extrabold text-zinc-50 md:text-6xl'>
             Nice to meet you!
             <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
@@ -27,6 +28,21 @@ export default function Home() {
                   Contact
                 </div>
               </button>
+            </div>
+          </div>
+        </div>
+        <div className='mx-auto h-96 rounded border border-zinc-600 md:w-3/4'>
+          <div className='relative flex items-center gap-4 border-b border-zinc-600 p-3 md:grid md:place-items-center'>
+            <div className='md:absolute md:left-3'>
+              <div className='flex gap-3'>
+                <div className='h-4 w-4 rounded-full bg-red-400'></div>
+                <div className='h-4 w-4 rounded-full bg-yellow-400'></div>
+                <div className='h-4 w-4 rounded-full bg-green-400'></div>
+              </div>
+            </div>
+            <div className='relative inline w-full rounded bg-zinc-900 p-2 text-center md:flex md:w-1/3 md:justify-center'>
+              <span className='font-medium tracking-wider text-zinc-50'>localhost:3000/skills</span>
+              <ArrowPathIcon className='absolute right-3 top-3 h-4 w-4 text-zinc-50' />
             </div>
           </div>
         </div>
