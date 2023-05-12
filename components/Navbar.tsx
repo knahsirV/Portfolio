@@ -13,7 +13,7 @@ const navs = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <div className='sticky top-0 z-10 px-6 py-4 backdrop-blur-md md:px-10'>
+    <div className='sticky top-0 z-10 px-6 py-4 backdrop-blur md:px-10'>
       <div className='flex items-center justify-between'>
         <h1 className='text-2xl font-bold tracking-widest text-zinc-50'>
           hire<span className='rounded-sm bg-zinc-50 text-zinc-950'>{"{Vrishank}"}</span>
