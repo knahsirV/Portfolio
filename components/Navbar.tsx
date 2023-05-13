@@ -31,7 +31,7 @@ const Navbar = () => {
           ))}
         </ul>
         <Link href='/contact'>
-          <button className='box-border hidden rounded border bg-zinc-50 px-3 py-2 text-sm font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:block'>
+          <button className='box-border hidden rounded-md border bg-zinc-50 px-3 py-2 text-sm font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:block'>
             Contact
           </button>
         </Link>
@@ -39,14 +39,14 @@ const Navbar = () => {
           onClick={() => {
             setNavbarOpen(!navbarOpen);
           }}
-          className='rounded bg-transparent px-2 py-1 text-zinc-50 transition duration-300 active:bg-zinc-50 active:text-zinc-950 md:hidden'
+          className='rounded-md bg-transparent px-2 py-1 text-zinc-50 transition duration-300 active:bg-zinc-50 active:text-zinc-950 md:hidden'
         >
           <Bars3BottomRightIcon className='h-8 w-8' />
         </button>
       </div>
       <div className={`mt-4 h-screen md:hidden ${navbarOpen ? "block" : "hidden"}`}>
         <Link href='/contact'>
-          <button className='box-border w-full rounded border bg-zinc-50 py-2 text-lg font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50'>
+          <button className='box-border w-full rounded-md border bg-zinc-50 py-2 text-lg font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50'>
             Contact
           </button>
         </Link>
