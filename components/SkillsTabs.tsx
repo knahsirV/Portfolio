@@ -7,7 +7,7 @@ import Image from "next/image";
 const SkillImage = ({ src, alt }: { src: string; alt: string }) => {
   return (
     <div className='mx-auto mb-2 grid aspect-square w-16 place-items-center rounded-lg bg-zinc-900'>
-      <Image src={src} alt={alt} width={100} height={100} className='aspect-square w-8' />
+      <Image src={src} alt={alt} width={200} height={200} className='aspect-square w-10' />
     </div>
   );
 };
@@ -17,7 +17,7 @@ const SkillsTabs = () => {
     <div className='grid grid-rows-[auto_1fr] p-6'>
       <Tab.Group>
         <Tab.List className='flex justify-center gap-0 md:gap-8'>
-          {["Languages", "Frameworks", "Dev Tools / Platforms"].map((tab) => (
+          {["Languages", "Frameworks", "Dev Platforms"].map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
