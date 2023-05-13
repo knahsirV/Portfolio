@@ -17,7 +17,7 @@ const SkillsTabs = () => {
     <div className='grid grid-rows-[auto_1fr] p-6'>
       <Tab.Group>
         <Tab.List className='flex justify-center gap-0 md:gap-8'>
-          {["Languages", "Frameworks", "Dev Tools"].map((tab) => (
+          {["Languages", "Frameworks", "Dev Tools / Platforms"].map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
