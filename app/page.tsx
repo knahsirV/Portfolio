@@ -42,7 +42,7 @@ export default function Home() {
               </div>
             </div>
             <div className='relative inline w-full rounded-md bg-zinc-900 p-2 text-center md:flex md:w-1/3 md:justify-center'>
-              <span className='font-medium tracking-wider text-zinc-50'>localhost:3000/skills</span>
+              <span className='font-medium tracking-wider text-zinc-50'>vrishank.dev/#skills</span>
               <ArrowPathIcon className='absolute right-3 top-3 h-4 w-4 text-zinc-50' />
             </div>
           </div>
