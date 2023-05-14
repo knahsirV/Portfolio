@@ -17,7 +17,7 @@ const SkillsTabs = () => {
     <div className='grid grid-rows-[auto_1fr] p-6'>
       <Tab.Group>
         <Tab.List className='flex justify-center gap-0 md:gap-8'>
-          {["Languages", "Frameworks", "Dev Platforms"].map((tab) => (
+          {["Languages", "Frameworks", "Platforms"].map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
@@ -30,7 +30,7 @@ const SkillsTabs = () => {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className=' mt-4 grid place-items-center text-zinc-50'>
+        <Tab.Panels className=' mt-6 grid place-items-center text-zinc-50'>
           <Tab.Panel className='flex w-full flex-wrap justify-evenly'>
             {Languages.map((language) => (
               <div key={language.name}>

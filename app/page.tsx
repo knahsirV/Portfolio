@@ -7,14 +7,14 @@ export default function Home() {
     <>
       <Navbar />
       <main className='min-h-screen p-6 lowercase md:p-10'>
-        <div className='mb-16'>
-          <h1 className='mb-6 text-center text-5xl font-extrabold text-zinc-50 md:text-6xl'>
+        <div className='mb-16 grid h-[45vh] place-content-center'>
+          <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             Nice to meet you!
             <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
               {" I'm Vrishank"}
             </span>
           </h1>
-          <p className='mx-auto mb-12 max-w-2xl text-center text-lg font-semibold text-zinc-500 md:text-xl'>
+          <p className='mx-auto mb-12 max-w-2xl text-center text-lg font-medium text-zinc-400 md:text-xl'>
             Welcome to my portfolio! I love learning and building projects using various
             technologies to create dynamic and efficient applications.
           </p>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='mx-auto grid grid-rows-[auto_1fr] rounded-md border border-zinc-600 md:h-96 md:w-3/4'>
+        <div className='mx-auto grid grid-rows-[auto_1fr] rounded-md border border-zinc-600 md:w-3/4'>
           <div className='relative flex items-center gap-4 border-b border-zinc-600 p-3 md:grid md:place-items-center'>
             <div className='md:absolute md:left-3'>
               <div className='flex gap-3'>
