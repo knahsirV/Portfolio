@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navs = [
   { name: "Home", link: "/" },
@@ -12,8 +12,20 @@ const navs = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className='sticky top-0 z-10 px-6 py-4 backdrop-blur md:px-10'>
+    <div
+      className={`sticky top-0 z-10 border-b px-6 py-4 backdrop-blur transition-all duration-300 md:px-10 ${
+        scrolled ? "border-zinc-900" : "border-transparent"
+      } `}
+    >
       <div className='flex items-center justify-between'>
         <h1 className='text-2xl font-bold tracking-widest text-zinc-50'>
           hire<span className='rounded-sm bg-zinc-50 text-zinc-950'>{"{Vrishank}"}</span>
