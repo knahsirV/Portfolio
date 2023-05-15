@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className='mx-auto min-h-screen p-6 lowercase md:w-3/4 md:p-10'>
-        <div className='mb-16 grid place-content-center md:h-[45vh]'>
+        <section className='mb-16 grid place-content-center md:h-[45vh]'>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             Nice to meet you!
             <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
@@ -31,8 +31,8 @@ export default function Home() {
               </button>
             </div>
           </div>
-        </div>
-        <div className='grid grid-rows-[auto_1fr] rounded-md border border-zinc-800'>
+        </section>
+        <section className='grid grid-rows-[auto_1fr] rounded-md border border-zinc-800'>
           <div className='relative flex items-center gap-4 border-b border-zinc-800 p-3 md:grid md:place-items-center'>
             <div className='md:absolute md:left-3'>
               <div className='flex gap-3'>
@@ -47,8 +47,8 @@ export default function Home() {
             </div>
           </div>
           <SkillsTabs />
-        </div>
-        <div className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'>
+        </section>
+        <section className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'>
           <div className='max-w-lg'>
             <div className='flex items-center justify-between'>
               <h1 className=' text-4xl font-bold text-zinc-50'>
@@ -85,8 +85,8 @@ export default function Home() {
               </code>
             </div>
           </div>
-        </div>
-        <div className='mt-48 '>
+        </section>
+        <section className='mt-48 '>
           <div className='mb-8 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
               featured
@@ -124,8 +124,8 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-        <div className='mt-48 md:flex md:gap-16'>
+        </section>
+        <section className='mt-48 md:flex md:gap-16'>
           <div className='grid-rows-[auto_1fr] md:grid md:w-1/2 md:gap-8'>
             <div className='mb-4 md:mb-0'>
               <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
@@ -231,7 +231,7 @@ export default function Home() {
               </div>
             </div>
           </form>
-        </div>
+        </section>
       </main>
     </>
   );
