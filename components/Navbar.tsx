@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const navs = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
-  { name: "Skills", link: "/skills" },
+  { name: "Skills", link: "/#skills" },
   { name: "Projects", link: "/projects" },
 ];
 
@@ -42,7 +42,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <Link href='/contact'>
+        <Link href='/#contact'>
           <button className='box-border hidden rounded-md border bg-zinc-50 px-3 py-2 text-sm font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:block'>
             Contact
           </button>
@@ -57,7 +57,7 @@ const Navbar = () => {
         </button>
       </div>
       <div className={`mt-4 h-screen md:hidden ${navbarOpen ? "block" : "hidden"}`}>
-        <Link href='/contact'>
+        <Link href='/#contact'>
           <button className='box-border w-full rounded-md border bg-zinc-50 py-2 text-lg font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50'>
             Contact
           </button>
