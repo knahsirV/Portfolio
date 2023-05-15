@@ -11,7 +11,7 @@ export default function Home() {
         <section id='hero' className='mb-16 grid place-content-center md:h-[45vh]'>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             Nice to meet you!
-            <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
               {" I'm Vrishank"}
             </span>
           </h1>
@@ -24,8 +24,8 @@ export default function Home() {
               Learn more
             </button>
             <div className='relative w-full md:w-40'>
-              <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-orange-600 to-indigo-600 opacity-75 blur-xl'></div>
-              <button className='relative w-full rounded-md bg-gradient-to-br from-orange-600 to-indigo-600 p-[1px] lowercase '>
+              <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl'></div>
+              <button className='relative w-full rounded-md bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] lowercase '>
                 <div className='rounded-md bg-zinc-950 px-8 py-2 text-lg font-semibold text-zinc-50 transition duration-300 hover:bg-transparent hover:text-zinc-950 '>
                   Contact
                 </div>
@@ -60,7 +60,7 @@ export default function Home() {
             <div className='flex items-center justify-between'>
               <h1 className=' text-4xl font-bold text-zinc-50'>
                 get to
-                <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
+                <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
                   {" "}
                   know me
                 </span>
@@ -97,7 +97,7 @@ export default function Home() {
           <div className='mb-8 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
               featured
-              <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
+              <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
                 {" "}
                 projects
               </span>
@@ -119,7 +119,7 @@ export default function Home() {
             <div className='mb-4 md:mb-0'>
               <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
                 get in
-                <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
+                <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
                   {" "}
                   contact
                 </span>
@@ -178,30 +178,30 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <form className='h-max rounded-lg bg-gradient-to-br from-orange-600 to-indigo-600 p-[1px] align-bottom text-sm md:w-1/2'>
+          <form className='h-max rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] align-bottom text-sm md:w-1/2'>
             <div className='rounded-lg bg-zinc-950 p-4 md:p-8'>
-              <label htmlFor='' className='mb-2 ml-1 block text-xs text-zinc-600'>
+              <label htmlFor='' className='mb-2 ml-1 block text-xs font-bold text-zinc-400'>
                 name
               </label>
-              <div className='mb-4 rounded-lg bg-zinc-600 p-[1px] md:mb-8'>
+              <div className='mb-4 rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] transition-colors focus-within:bg-gradient-to-br hover:bg-gradient-to-br md:mb-8'>
                 <input
                   type='text'
                   className='block w-full rounded-lg bg-zinc-950 p-2 text-zinc-50 outline-none placeholder:text-zinc-600'
                 />
               </div>
-              <label htmlFor='' className='mb-2 ml-1 block text-xs text-zinc-600'>
+              <label htmlFor='' className='mb-2 ml-1 block text-xs font-bold text-zinc-400'>
                 email
               </label>
-              <div className='mb-4 rounded-lg bg-zinc-600 p-[1px] md:mb-8'>
+              <div className='mb-4 rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] transition-all focus-within:bg-gradient-to-br hover:bg-gradient-to-br md:mb-8'>
                 <input
                   type='text'
                   className='block w-full rounded-lg bg-zinc-950 p-2 text-zinc-50 outline-none placeholder:text-zinc-600'
                 />
               </div>
-              <label htmlFor='' className='mb-2 ml-1 block text-xs text-zinc-600'>
+              <label htmlFor='' className='mb-2 ml-1 block text-xs font-bold text-zinc-400'>
                 how can i help you?
               </label>
-              <div className='mb-4 rounded-lg bg-zinc-600 p-[1px] md:mb-8'>
+              <div className='mb-4 rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] transition-all focus-within:bg-gradient-to-br hover:bg-gradient-to-br md:mb-8'>
                 <textarea
                   name=''
                   id=''
@@ -209,11 +209,12 @@ export default function Home() {
                   className='mb-0 w-full resize-none rounded-lg border-none bg-zinc-950 p-2 align-bottom text-zinc-50 outline-none placeholder:text-zinc-600'
                 ></textarea>
               </div>
-              <div className='mx-auto ml-auto w-min rounded-lg bg-zinc-600 p-[1px] md:mr-0'>
-                <input
-                  type='submit'
-                  className='cursor-pointer rounded-lg bg-zinc-900 px-16 py-2 font-medium lowercase text-zinc-600'
-                />
+              <div className='group mx-auto ml-auto w-min rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] hover:bg-gradient-to-br md:mr-0 '>
+                <button type='submit' className='rounded-lg bg-zinc-900 px-12 py-2'>
+                  <span className='font-medium text-zinc-600 group-hover:bg-gradient-to-br group-hover:from-fuchsia-600 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent'>
+                    submit
+                  </span>
+                </button>
               </div>
             </div>
           </form>

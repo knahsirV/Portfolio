@@ -4,7 +4,7 @@ const Project = () => {
   return (
     <div className='aspect-square w-72 rounded-lg bg-zinc-900 p-6'>
       <div className='mb-4 flex items-center justify-between'>
-        <div className='grid aspect-square w-10 place-items-center rounded-lg bg-gradient-to-br from-orange-600 to-indigo-600'>
+        <div className='grid aspect-square w-10 place-items-center rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600'>
           <ComputerDesktopIcon className='h-6 w-6 text-zinc-950' />
         </div>
         <h3 className='font-bold text-zinc-600'>web app</h3>
