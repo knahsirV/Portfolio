@@ -1,6 +1,4 @@
 import Navbar from "@/app/components/Navbar";
-import SkillsTabs from "@/app/components/SkillsTabs";
-import { ArrowPathIcon, ComputerDesktopIcon } from "@heroicons/react/20/solid";
 import Project from "../components/Project";
 
 export default function Home() {
