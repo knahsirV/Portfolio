@@ -155,7 +155,7 @@ export default function Home() {
                     <h1 className='mb-2 text-lg font-bold text-zinc-50'>Inbox</h1>
                     <div className='h-6 w-full rounded bg-zinc-700'></div>
                   </div>
-                  {[1, 2, 3].map((message) => (
+                  {[1, 2].map((message) => (
                     <div key={message} className='relative border-b border-b-zinc-800 p-6'>
                       <div className='grid grid-cols-[auto_1fr] gap-2 '>
                         <div className='h-6 w-6 rounded-full bg-zinc-700' />
@@ -189,29 +189,27 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <form className='rounded-lg bg-gradient-to-br from-orange-600 to-indigo-600 p-[1px] md:w-1/2'>
+          <form className='h-max rounded-lg bg-gradient-to-br from-orange-600 to-indigo-600 p-[1px] align-bottom text-sm md:w-1/2'>
             <div className='rounded-lg bg-zinc-950 p-4 md:p-8'>
-              <label htmlFor='' className='mb-2 ml-1 block text-sm text-zinc-600'>
+              <label htmlFor='' className='mb-2 ml-1 block text-xs text-zinc-600'>
                 name
               </label>
               <div className='mb-4 rounded-lg bg-zinc-600 p-[1px] md:mb-8'>
                 <input
                   type='text'
-                  placeholder='peter parker'
-                  className='block w-full rounded-lg bg-zinc-950 p-4 text-zinc-50 outline-none placeholder:text-zinc-600'
+                  className='block w-full rounded-lg bg-zinc-950 p-2 text-zinc-50 outline-none placeholder:text-zinc-600'
                 />
               </div>
-              <label htmlFor='' className='mb-2 ml-1 block text-sm text-zinc-600'>
+              <label htmlFor='' className='mb-2 ml-1 block text-xs text-zinc-600'>
                 email
               </label>
               <div className='mb-4 rounded-lg bg-zinc-600 p-[1px] md:mb-8'>
                 <input
                   type='text'
-                  placeholder='peter-parker@gmail.com'
-                  className='block w-full rounded-lg bg-zinc-950 p-4 text-zinc-50 outline-none placeholder:text-zinc-600'
+                  className='block w-full rounded-lg bg-zinc-950 p-2 text-zinc-50 outline-none placeholder:text-zinc-600'
                 />
               </div>
-              <label htmlFor='' className='mb-2 ml-1 block text-sm text-zinc-600'>
+              <label htmlFor='' className='mb-2 ml-1 block text-xs text-zinc-600'>
                 how can i help you?
               </label>
               <div className='mb-4 rounded-lg bg-zinc-600 p-[1px] md:mb-8'>
@@ -219,8 +217,7 @@ export default function Home() {
                   name=''
                   id=''
                   rows={7}
-                  placeholder='hi vrishank, my name is . . .'
-                  className='mb-0 w-full resize-none rounded-lg border-none bg-zinc-950 p-4 align-bottom text-zinc-50 outline-none placeholder:text-zinc-600'
+                  className='mb-0 w-full resize-none rounded-lg border-none bg-zinc-950 p-2 align-bottom text-zinc-50 outline-none placeholder:text-zinc-600'
                 ></textarea>
               </div>
               <div className='mx-auto ml-auto w-min rounded-lg bg-zinc-600 p-[1px] md:mr-0'>
