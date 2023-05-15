@@ -1,13 +1,14 @@
 import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
 import { ArrowPathIcon, ComputerDesktopIcon } from "@heroicons/react/20/solid";
+import Project from "./components/Project";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main className='mx-auto min-h-screen p-6 lowercase md:w-3/4 md:p-10'>
-        <section className='mb-16 grid place-content-center md:h-[45vh]'>
+        <section id='hero' className='mb-16 grid place-content-center md:h-[45vh]'>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             Nice to meet you!
             <span className='bg-gradient-to-br from-orange-600 to-indigo-600 bg-clip-text text-transparent'>
@@ -51,7 +52,10 @@ export default function Home() {
           </div>
           <SkillsTabs />
         </section>
-        <section className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'>
+        <section
+          id='about'
+          className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'
+        >
           <div className='max-w-lg'>
             <div className='flex items-center justify-between'>
               <h1 className=' text-4xl font-bold text-zinc-50'>
@@ -89,7 +93,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='mt-48 '>
+        <section id='featured-projects' className='mt-48 '>
           <div className='mb-8 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
               featured
@@ -104,26 +108,8 @@ export default function Home() {
           </div>
           <div className='flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-0'>
             {[1, 2, 3].map((project) => (
-              <div key={project} className='aspect-square w-72 rounded-lg bg-zinc-900 p-6'>
-                <div className='mb-4 flex items-center justify-between'>
-                  <div className='grid aspect-square w-10 place-items-center rounded-lg bg-gradient-to-br from-orange-600 to-indigo-600'>
-                    <ComputerDesktopIcon className='h-6 w-6 text-zinc-950' />
-                  </div>
-                  <h3 className='font-bold text-zinc-600'>web app</h3>
-                </div>
-                <h2 className='mb-2 text-2xl font-semibold text-zinc-50'>news archiver</h2>
-                <p className=' mb-4 text-sm font-medium leading-loose text-zinc-50'>
-                  lorem ipsum dolor sit amet, consectetur adipiscing elit. sed sit amet, consectetur
-                  adipiscing elit. sed
-                </p>
-                <div className='mt-auto flex gap-4'>
-                  <button className='box-border h-min rounded-full border px-4 py-1 text-sm font-bold lowercase text-zinc-50 transition duration-300 hover:border-transparent hover:bg-zinc-50 hover:text-zinc-950'>
-                    github
-                  </button>
-                  <button className='box-border h-min rounded-full border px-4 py-1 text-sm font-bold lowercase text-zinc-50 transition duration-300 hover:border-transparent hover:bg-zinc-50 hover:text-zinc-950'>
-                    visit
-                  </button>
-                </div>
+              <div key={project}>
+                <Project />
               </div>
             ))}
           </div>

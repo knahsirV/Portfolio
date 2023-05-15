@@ -1,6 +1,7 @@
 import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
 import { ArrowPathIcon, ComputerDesktopIcon } from "@heroicons/react/20/solid";
+import Project from "../components/Project";
 
 export default function Home() {
   return (
@@ -18,6 +19,13 @@ export default function Home() {
             Welcome to my portfolio! I love learning and building projects using various
             technologies to create dynamic and efficient applications.
           </p>
+          {/* <div className='flex flex-col flex-wrap items-center gap-4 md:flex-row md:justify-between md:gap-0'>
+            {[...Array(9).keys()].map((project) => (
+              <div key={project}>
+                <Project />
+              </div>
+            ))}
+          </div> */}
         </section>
       </main>
     </>
