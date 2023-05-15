@@ -1,7 +1,7 @@
 "use client";
 import { Tab } from "@headlessui/react";
 import React from "react";
-import { Languages, Frameworks, DevTools } from "@/ConstData/skills";
+import { Languages, Frameworks, DevTools } from "@/app/ConstData/skills";
 import Image from "next/image";
 
 const SkillImage = ({ src, alt }: { src: string; alt: string }) => {
