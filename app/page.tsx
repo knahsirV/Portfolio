@@ -2,6 +2,7 @@ import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
 import Project from "./components/Project";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -178,46 +179,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <form className='h-max rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] align-bottom text-sm md:w-1/2'>
-            <div className='rounded-lg bg-zinc-950 p-4 md:p-8'>
-              <label htmlFor='' className='mb-2 ml-1 block text-xs font-bold text-zinc-400'>
-                name
-              </label>
-              <div className='mb-4 rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] transition-colors focus-within:bg-gradient-to-br hover:bg-gradient-to-br md:mb-8'>
-                <input
-                  type='text'
-                  className='block w-full rounded-lg bg-zinc-950 p-2 text-zinc-50 outline-none placeholder:text-zinc-600'
-                />
-              </div>
-              <label htmlFor='' className='mb-2 ml-1 block text-xs font-bold text-zinc-400'>
-                email
-              </label>
-              <div className='mb-4 rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] transition-all focus-within:bg-gradient-to-br hover:bg-gradient-to-br md:mb-8'>
-                <input
-                  type='text'
-                  className='block w-full rounded-lg bg-zinc-950 p-2 text-zinc-50 outline-none placeholder:text-zinc-600'
-                />
-              </div>
-              <label htmlFor='' className='mb-2 ml-1 block text-xs font-bold text-zinc-400'>
-                how can i help you?
-              </label>
-              <div className='mb-4 rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] transition-all focus-within:bg-gradient-to-br hover:bg-gradient-to-br md:mb-8'>
-                <textarea
-                  name=''
-                  id=''
-                  rows={7}
-                  className='mb-0 w-full resize-none rounded-lg border-none bg-zinc-950 p-2 align-bottom text-zinc-50 outline-none placeholder:text-zinc-600'
-                ></textarea>
-              </div>
-              <div className='group mx-auto ml-auto w-min rounded-lg bg-zinc-600 from-fuchsia-600 to-blue-600 p-[1px] hover:bg-gradient-to-br md:mr-0 '>
-                <button type='submit' className='rounded-lg bg-zinc-900 px-12 py-2'>
-                  <span className='font-medium text-zinc-600 group-hover:bg-gradient-to-br group-hover:from-fuchsia-600 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent'>
-                    submit
-                  </span>
-                </button>
-              </div>
-            </div>
-          </form>
+          <ContactForm />
         </section>
       </main>
     </>
