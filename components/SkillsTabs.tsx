@@ -14,9 +14,9 @@ const SkillImage = ({ src, alt }: { src: string; alt: string }) => {
 
 const SkillsTabs = () => {
   return (
-    <div className='grid grid-rows-[auto_1fr] p-6'>
+    <div className='p-3 md:p-6'>
       <Tab.Group>
-        <Tab.List className='flex justify-center gap-0 md:gap-8'>
+        <Tab.List className='flex flex-wrap justify-center gap-0 md:gap-8'>
           {["Languages", "Frameworks", "Platforms"].map((tab) => (
             <Tab
               key={tab}
