@@ -37,10 +37,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
-          id='skills'
-          className='grid grid-rows-[auto_1fr] rounded-md border border-zinc-800'
-        >
+        <div id='skills' className='-mt-20 pt-20' />
+        <section className='grid grid-rows-[auto_1fr] rounded-md border border-zinc-800'>
           <div className='relative flex items-center gap-4 border-b border-zinc-800 p-3 md:grid md:place-items-center'>
             <div className='md:absolute md:left-3'>
               <div className='flex gap-3'>
