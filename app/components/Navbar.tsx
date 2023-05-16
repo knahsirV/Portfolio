@@ -22,7 +22,9 @@ const Navbar = () => {
 
   return (
     <div
-      className={`sticky top-0 z-10 border-b px-6 py-4 backdrop-blur transition-all duration-300 md:px-10 ${
+      className={`sticky top-0 z-20 overscroll-none border-b ${
+        navbarOpen && "bg-zinc-950"
+      } px-6 py-4 backdrop-blur transition-all duration-300 md:bg-transparent md:px-10 ${
         scrolled ? "border-zinc-900" : "border-transparent"
       } `}
     >
