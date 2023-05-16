@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useForm, SubmitHandler, FieldError } from "react-hook-form";
-import sendEmail from "../send-email";
+import { sendEmailToMe, sendEmailToVisitor } from "../send-email";
 
 export interface IFormInput {
   email: string;
@@ -58,7 +58,10 @@ const ContactForm = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     setLoading(true);
-    sendEmail(data.email, data.name, data.message).then((val) => {
+    sendEmailToMe(data.email, data.name, data.message).then((val) => {
+      console.log(val);
+    });
+    sendEmailToVisitor(data.email, data.name, data.message).then((val) => {
       console.log(val);
     });
     setLoading(false);
