@@ -14,8 +14,9 @@ export default function Home() {
             </span>
           </h1>
           <p className='mx-auto mb-12 max-w-2xl text-center text-lg font-medium text-zinc-400 md:text-xl'>
-            Here are the projects I've worked on. I'm always looking for new opportunities, so feel
-            free to reach out!
+            {
+              "Here are the projects I've worked on. I'm always looking for new opportunities, so feel free to reach out!"
+            }
           </p>
         </section>
         <div className='flex flex-col flex-wrap items-center gap-4 md:flex-row md:justify-around md:gap-8'>
