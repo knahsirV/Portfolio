@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className='mx-auto min-h-screen max-w-6xl p-6 lowercase md:w-3/4 md:p-10'>
-        <section id='hero' className=' top-20 mb-16 grid place-content-center'>
+        <section id='hero' className=' mb-16 grid place-content-center'>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             my
             <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
