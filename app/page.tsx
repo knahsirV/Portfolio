@@ -3,6 +3,7 @@ import SkillsTabs from "@/app/components/SkillsTabs";
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
 import Project from "./components/Project";
 import ContactForm from "./components/ContactForm";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,11 +27,13 @@ export default function Home() {
             </button>
             <div className='relative w-full md:w-40'>
               <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl'></div>
-              <button className='relative w-full rounded-md bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] lowercase '>
-                <div className='rounded-md bg-zinc-950 px-8 py-2 text-lg font-semibold text-zinc-50 transition duration-300 hover:bg-transparent hover:text-zinc-950 '>
-                  Contact
-                </div>
-              </button>
+              <Link href='/#contact' scroll={true}>
+                <button className='relative w-full rounded-md bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] lowercase '>
+                  <div className='rounded-md bg-zinc-950 px-8 py-2 text-lg font-semibold text-zinc-50 transition duration-300 hover:bg-transparent hover:text-zinc-950 '>
+                    Contact
+                  </div>
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -141,12 +144,15 @@ export default function Home() {
               </div>
               <div className='flex'>
                 <div className='w-1/3 border-r border-r-zinc-800'>
-                  <div className='border-b border-b-zinc-800 p-6'>
+                  <div className='border-b border-b-zinc-800 p-4'>
                     <h1 className='mb-2 text-lg font-bold text-zinc-50'>Inbox</h1>
-                    <div className='h-6 w-full rounded bg-zinc-700'></div>
+                    <div className='h-5 w-full rounded bg-zinc-700'></div>
                   </div>
-                  {[1, 2].map((message) => (
-                    <div key={message} className='relative border-b border-b-zinc-800 p-6'>
+                  {[1, 2, 3].map((message) => (
+                    <div
+                      key={message}
+                      className='relative border-b border-b-zinc-800 p-6 last:border-none'
+                    >
                       <div className='grid grid-cols-[auto_1fr] gap-2 '>
                         <div className='h-6 w-6 rounded-full bg-zinc-700' />
                         <div className='space-y-2'>
