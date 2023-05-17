@@ -1,7 +1,29 @@
 import Navbar from "@/app/components/Navbar";
-import Project from "../components/Project";
+import { Project, ProjectSkel } from "../components/Project";
+import { Suspense } from "react";
+import { getProjects } from "../get-projects";
 
-export default function Home() {
+const Loading = () => {
+  const empty = Array(9).fill("");
+  return (
+    <>
+      {empty.map((project) => (
+        <div key={project}>
+          <ProjectSkel />
+        </div>
+      ))}
+    </>
+  );
+};
+
+type Project = {
+  name: string;
+  description: string;
+  url: string;
+};
+
+export default async function Home() {
+  const projects = await getProjects();
   return (
     <>
       <Navbar />
@@ -20,11 +42,13 @@ export default function Home() {
           </p>
         </section>
         <div className='flex flex-col flex-wrap items-center gap-4 md:flex-row md:justify-around md:gap-8'>
-          {[...Array(9).keys()].map((project) => (
-            <div key={project}>
-              <Project />
-            </div>
-          ))}
+          <Suspense fallback={<Loading />}>
+            {projects.map((project: Project) => (
+              <div key={project.name}>
+                <Project name={project.name} description={project.description} url={project.url} />
+              </div>
+            ))}
+          </Suspense>
         </div>
       </main>
     </>

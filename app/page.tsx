@@ -1,11 +1,32 @@
 import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
-import Project from "./components/Project";
+import { Project, ProjectSkel } from "./components/Project";
+import { getProjects } from "./get-projects";
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function Home() {
+const Loading = () => {
+  return (
+    <>
+      {[1, 2, 3].map((project) => (
+        <div key={project}>
+          <ProjectSkel />
+        </div>
+      ))}
+    </>
+  );
+};
+
+type Project = {
+  name: string;
+  description: string;
+  url: string;
+};
+
+export default async function Home() {
+  const featuredProjects = await getProjects(3);
   return (
     <>
       <Navbar />
@@ -109,11 +130,17 @@ export default function Home() {
             </button>
           </div>
           <div className='flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-0'>
-            {[1, 2, 3].map((project) => (
-              <div key={project}>
-                <Project />
-              </div>
-            ))}
+            <Suspense fallback={<Loading />}>
+              {featuredProjects.map((project: Project) => (
+                <div key={project.name}>
+                  <Project
+                    name={project.name}
+                    description={project.description}
+                    url={project.url}
+                  />
+                </div>
+              ))}
+            </Suspense>
           </div>
         </section>
         <section id='contact' className='mt-48 md:flex md:gap-16'>
