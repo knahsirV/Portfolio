@@ -1,10 +1,5 @@
 "use client";
-import {
-  ComputerDesktopIcon,
-  ArrowUpRightIcon,
-  WindowIcon,
-  GlobeAltIcon,
-} from "@heroicons/react/20/solid";
+import { ComputerDesktopIcon, WindowIcon } from "@heroicons/react/20/solid";
 import { Github } from "react-bootstrap-icons";
 import Link from "next/link";
 import { projectIcons } from "../ConstData/projectIcons";
