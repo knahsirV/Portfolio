@@ -1,11 +1,12 @@
 import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
-import { ArrowPathIcon } from "@heroicons/react/20/solid";
+import { ArrowPathIcon, ClipboardDocumentListIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 import { Project, ProjectSkel } from "./components/Project";
 import { getProjects } from "./get-projects";
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
 import { Suspense } from "react";
+import { Github, Linkedin } from "react-bootstrap-icons";
 
 const Loading = () => {
   return (
@@ -19,6 +20,29 @@ const Loading = () => {
   );
 };
 
+const quickActions = [
+  {
+    name: "github",
+    link: "https://github.com/knahsirV",
+    icon: <Github className='h-4 w-4' />,
+  },
+  {
+    name: "linkedin",
+    link: "https://www.linkedin.com/in/vrishank-v",
+    icon: <Linkedin className='h-4 w-4' />,
+  },
+  {
+    name: "email",
+    link: "mailto:vrishank@utexas.edu",
+    icon: <EnvelopeIcon className='h-4 w-4' />,
+  },
+  {
+    name: "resume",
+    link: "/",
+    icon: <ClipboardDocumentListIcon className='h-4 w-4' />,
+  },
+];
+
 export default async function Home() {
   const latestProjects = await getProjects(3);
   return (
@@ -26,6 +50,19 @@ export default async function Home() {
       <Navbar />
       <main className='mx-auto min-h-screen max-w-6xl p-6 lowercase md:w-3/4 md:p-10'>
         <section id='hero' className='mb-16 grid place-content-center md:h-[45vh]'>
+          <div className='mb-6 flex flex-wrap items-center justify-center gap-4'>
+            {quickActions.map((action) => (
+              <Link
+                key={action.name}
+                href={action.link}
+                target='_blank'
+                className=' flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-1.5 font-bold lowercase text-zinc-300 transition duration-300 hover:bg-zinc-300 hover:text-zinc-800'
+              >
+                {action.icon}
+                <span>{action.name}</span>
+              </Link>
+            ))}
+          </div>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             Nice to meet you!
             <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
@@ -74,8 +111,8 @@ export default async function Home() {
           className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'
         >
           <div className='max-w-lg'>
-            <div className='flex items-center justify-between'>
-              <h1 className=' text-4xl font-bold text-zinc-50'>
+            <div className='items-center justify-between md:flex'>
+              <h1 className=' text-center text-4xl font-bold text-zinc-50 md:text-left'>
                 get to
                 <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
                   {" "}
@@ -86,12 +123,12 @@ export default async function Home() {
                 Learn more
               </button>
             </div>
-            <p className=' mt-4 text-justify text-zinc-50'>
+            <p className=' mt-4 text-center text-zinc-50 md:text-justify'>
               lorem ipsum dolor sit amet, consectetur adipiscing elit. sed efficitur molestie diam,
               vitae viverra ipsum tincidunt nec .lorem ipsum dolor sit amet, consectetur adipiscing
               elit. sed efficitur molestie diam
             </p>
-            <button className='ml-auto mt-4 box-border block h-min rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:hidden'>
+            <button className='mx-auto mt-4 box-border block h-min rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:hidden'>
               Learn more
             </button>
           </div>
@@ -121,7 +158,7 @@ export default async function Home() {
             </h1>
             <Link
               href='/projects'
-              className='mx-auto mt-8 box-border block h-min rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0'
+              className='mx-auto mt-8 box-border block h-min w-min whitespace-nowrap rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0'
             >
               all projects
             </Link>
@@ -152,7 +189,7 @@ export default async function Home() {
                   contact
                 </span>
               </h1>
-              <p className=' mt-4 text-justify text-zinc-50'>
+              <p className=' mt-4 text-center text-zinc-50 md:text-justify'>
                 lorem ipsum dolor sit amet, consectetur adipiscing elit. sed efficitur molestie
                 diam, vitae viverra ipsum tincidunt nec .lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. sed efficitur molestie diam

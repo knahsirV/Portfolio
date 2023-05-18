@@ -21,7 +21,6 @@ export type Project = {
 export const Project = ({ name, description, github_url, project_url, topics }: Project) => {
   const [expanded, setExpanded] = useState(false);
   const canExpland = description.length > 160;
-  console.log(description.length);
   return (
     <div className=' aspect-square w-72 rounded-lg bg-zinc-900 p-6'>
       <div className='mb-4 flex items-center justify-between'>

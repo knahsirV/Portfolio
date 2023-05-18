@@ -22,7 +22,7 @@ const SkillsTabs = () => {
               key={tab}
               className={({ selected }) =>
                 `${
-                  selected ? "bg-zinc-600 hover:bg-zinc-600" : "hover:bg-zinc-800"
+                  selected ? "bg-zinc-800 hover:bg-zinc-800" : "hover:bg-zinc-900"
                 } rounded-full px-4 py-2 font-semibold lowercase text-zinc-50 transition duration-300 focus:outline-none`
               }
             >
