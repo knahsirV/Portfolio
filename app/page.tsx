@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Github, Linkedin } from "react-bootstrap-icons";
+import ProjectScroll from "./components/ProjectScroll";
 
 const Loading = () => {
   return (
@@ -44,7 +45,7 @@ const quickActions = [
 ];
 
 export default async function Home() {
-  const latestProjects = await getProjects(3);
+  const latestProjects: Project[] = await getProjects(3);
   return (
     <>
       <Navbar />
@@ -74,9 +75,12 @@ export default async function Home() {
             technologies to create dynamic and efficient applications.
           </p>
           <div className=' justify-center gap-10 md:flex'>
-            <button className='mb-8 box-border w-full rounded-md border bg-zinc-50 px-8 py-2 text-lg font-semibold lowercase transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:mb-0 md:w-40'>
+            <Link
+              href='/#skills'
+              className='mb-8 box-border block w-full rounded-md border bg-zinc-50 px-8 py-2 text-center text-lg font-semibold lowercase transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:mb-0 md:w-40'
+            >
               Learn more
-            </button>
+            </Link>
             <div className='relative w-full md:w-40'>
               <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl'></div>
               <Link href='/#contact' scroll={true}>
@@ -148,7 +152,7 @@ export default async function Home() {
           </div>
         </section>
         <section id='latest-projects' className='mt-48 '>
-          <div className='mb-8 items-center justify-between md:flex'>
+          <div className='mb-6 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
               latest
               <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
@@ -156,28 +160,40 @@ export default async function Home() {
                 projects
               </span>
             </h1>
+            <ProjectScroll projects={latestProjects} />
             <Link
               href='/projects'
-              className='mx-auto mt-8 box-border block h-min w-min whitespace-nowrap rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0'
+              className='mx-auto mt-6 box-border hidden h-min w-min whitespace-nowrap rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0 md:block'
             >
               all projects
             </Link>
           </div>
-          <div className='flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-0'>
-            <Suspense fallback={<Loading />}>
-              {latestProjects.map((project: Project) => (
-                <div key={project.name}>
-                  <Project
-                    name={project.name}
-                    description={project.description}
-                    github_url={project.github_url}
-                    project_url={project.project_url}
-                    topics={project.topics}
-                  />
-                </div>
-              ))}
-            </Suspense>
+          <div
+            id='projects-container'
+            className='scrollbar-hide mx-auto w-72 overflow-scroll rounded-lg md:w-auto'
+          >
+            <div className='flex snap-x items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-0'>
+              <Suspense fallback={<Loading />}>
+                {latestProjects.map((project: Project) => (
+                  <div key={project.name}>
+                    <Project
+                      name={project.name}
+                      description={project.description}
+                      github_url={project.github_url}
+                      project_url={project.project_url}
+                      topics={project.topics}
+                    />
+                  </div>
+                ))}
+              </Suspense>
+            </div>
           </div>
+          <Link
+            href='/projects'
+            className='mx-auto mt-6 box-border block h-min w-min whitespace-nowrap rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0 md:hidden'
+          >
+            all projects
+          </Link>
         </section>
         <section id='contact' className='mt-48 md:flex md:gap-16'>
           <div className='grid-rows-[auto_1fr] md:grid md:w-1/2 md:gap-8'>

@@ -22,7 +22,7 @@ export const Project = ({ name, description, github_url, project_url, topics }: 
   const [expanded, setExpanded] = useState(false);
   const canExpland = description.length > 160;
   return (
-    <div className=' aspect-square w-72 rounded-lg bg-zinc-900 p-6'>
+    <div id={name} className='aspect-square w-72 snap-center rounded-lg bg-zinc-900 p-6'>
       <div className='mb-4 flex items-center justify-between'>
         <div
           className={`grid aspect-square w-10 place-items-center rounded-lg bg-gradient-to-br text-zinc-900 ${
