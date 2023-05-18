@@ -5,7 +5,7 @@ import { Project, ProjectLoading } from "./components/Project";
 import { getProjects } from "./get-projects";
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import ProjectScroll from "./components/ProjectScroll";
 import { quickActions } from "./ConstData/quickActions";
 
@@ -15,7 +15,10 @@ export default async function Home() {
     <>
       <Navbar />
       <main className='mx-auto min-h-screen max-w-6xl p-6 lowercase md:w-3/4 md:p-10'>
-        <section id='hero' className='mb-16 grid place-content-center md:h-[45vh]'>
+        <section
+          id='hero'
+          className='mb-16 grid animate-fade-in-down place-content-center md:h-[45vh]'
+        >
           <div className='mb-6 flex flex-wrap items-center justify-center gap-4'>
             {quickActions.map((action) => (
               <Link
@@ -31,7 +34,7 @@ export default async function Home() {
           </div>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
             Nice to meet you!
-            <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
+            <span className='animate-bg-pan bg-gradient-to-r from-fuchsia-600 via-blue-600 to-fuchsia-600 bg-double bg-clip-text text-transparent'>
               {" I'm Vrishank"}
             </span>
           </h1>
@@ -46,8 +49,8 @@ export default async function Home() {
             >
               Learn more
             </Link>
-            <div className='relative w-full md:w-40'>
-              <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl' />
+            <div className='group relative w-full md:w-40'>
+              <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl transition-all group-hover:animate-ping-once' />
               <Link href='/#contact' scroll={true}>
                 <button className='relative w-full rounded-md bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] lowercase '>
                   <div className='rounded-md bg-zinc-950 px-8 py-2 text-lg font-semibold text-zinc-50 transition duration-300 hover:bg-transparent hover:text-zinc-950 '>
