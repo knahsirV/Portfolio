@@ -126,7 +126,7 @@ export default async function Home() {
               all projects
             </Link>
           </div>
-          <div className='flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-0'>
+          <div className='flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-0'>
             <Suspense fallback={<Loading />}>
               {latestProjects.map((project: Project) => (
                 <div key={project.name}>

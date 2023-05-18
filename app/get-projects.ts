@@ -6,7 +6,7 @@ const unmodifiableProjects: { [key: string]: { description: string; topics: stri
   FamiLead: {
     description:
       "An app designed to provide a streamlined communication platform for families and stay connected with a task scheduler, chat service, calendar, maps, and location tracking.",
-    topics: ["react", "twilio", "firebase", "google-calendar", "tailwindcss"],
+    topics: ["react", "twilio", "firebase", "google-calendar"],
   },
 };
 
