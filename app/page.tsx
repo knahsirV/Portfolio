@@ -1,36 +1,13 @@
 import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
-import { ArrowPathIcon, ClipboardDocumentListIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
+import { ArrowPathIcon } from "@heroicons/react/20/solid";
 import { Project, ProjectLoading } from "./components/Project";
 import { getProjects } from "./get-projects";
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
 import { Suspense } from "react";
-import { Github, Linkedin } from "react-bootstrap-icons";
 import ProjectScroll from "./components/ProjectScroll";
-
-const quickActions = [
-  {
-    name: "github",
-    link: "https://github.com/knahsirV",
-    icon: <Github className='h-4 w-4' />,
-  },
-  {
-    name: "linkedin",
-    link: "https://www.linkedin.com/in/vrishank-v",
-    icon: <Linkedin className='h-4 w-4' />,
-  },
-  {
-    name: "email",
-    link: "mailto:vrishank@utexas.edu",
-    icon: <EnvelopeIcon className='h-4 w-4' />,
-  },
-  {
-    name: "resume",
-    link: "/",
-    icon: <ClipboardDocumentListIcon className='h-4 w-4' />,
-  },
-];
+import { quickActions } from "./ConstData/quickActions";
 
 export default async function Home() {
   const latestProjects: Project[] = await getProjects(3);
