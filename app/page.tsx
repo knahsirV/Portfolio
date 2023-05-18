@@ -19,14 +19,8 @@ const Loading = () => {
   );
 };
 
-type Project = {
-  name: string;
-  description: string;
-  url: string;
-};
-
 export default async function Home() {
-  const featuredProjects = await getProjects(3);
+  const latestProjects = await getProjects(3);
   return (
     <>
       <Navbar />
@@ -116,27 +110,32 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section id='featured-projects' className='mt-48 '>
+        <section id='latest-projects' className='mt-48 '>
           <div className='mb-8 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
-              featured
+              latest
               <span className='bg-gradient-to-br from-fuchsia-600 to-blue-600 bg-clip-text text-transparent'>
                 {" "}
                 projects
               </span>
             </h1>
-            <button className='mx-auto mt-8 box-border block h-min rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0'>
+            <Link
+              href='/projects'
+              className='mx-auto mt-8 box-border block h-min rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:mx-0 md:mt-0'
+            >
               all projects
-            </button>
+            </Link>
           </div>
           <div className='flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-0'>
             <Suspense fallback={<Loading />}>
-              {featuredProjects.map((project: Project) => (
+              {latestProjects.map((project: Project) => (
                 <div key={project.name}>
                   <Project
                     name={project.name}
                     description={project.description}
-                    url={project.url}
+                    github_url={project.github_url}
+                    project_url={project.project_url}
+                    topics={project.topics}
                   />
                 </div>
               ))}

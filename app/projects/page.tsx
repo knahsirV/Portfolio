@@ -16,12 +16,6 @@ const Loading = () => {
   );
 };
 
-type Project = {
-  name: string;
-  description: string;
-  url: string;
-};
-
 export default async function Home() {
   const projects = await getProjects();
   return (
@@ -45,7 +39,13 @@ export default async function Home() {
           <Suspense fallback={<Loading />}>
             {projects.map((project: Project) => (
               <div key={project.name}>
-                <Project name={project.name} description={project.description} url={project.url} />
+                <Project
+                  name={project.name}
+                  description={project.description}
+                  github_url={project.github_url}
+                  project_url={project.project_url}
+                  topics={project.topics}
+                />
               </div>
             ))}
           </Suspense>
