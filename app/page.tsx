@@ -82,7 +82,7 @@ export default async function Home() {
               Learn more
             </Link>
             <div className='relative w-full md:w-40'>
-              <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl'></div>
+              <div className='absolute -inset-1 mx-auto w-3/4 rounded-lg bg-gradient-to-br from-fuchsia-600 to-blue-600 opacity-75 blur-xl' />
               <Link href='/#contact' scroll={true}>
                 <button className='relative w-full rounded-md bg-gradient-to-br from-fuchsia-600 to-blue-600 p-[1px] lowercase '>
                   <div className='rounded-md bg-zinc-950 px-8 py-2 text-lg font-semibold text-zinc-50 transition duration-300 hover:bg-transparent hover:text-zinc-950 '>
@@ -128,9 +128,9 @@ export default async function Home() {
               </button>
             </div>
             <p className=' mt-4 text-center text-zinc-50 md:text-justify'>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. sed efficitur molestie diam,
-              vitae viverra ipsum tincidunt nec .lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. sed efficitur molestie diam
+              {
+                "I'm a third-year Computer Science student at the University of Texas at Austin. I'm passionate about building applications that solve real-world problems and improve the lives of others."
+              }
             </p>
             <button className='mx-auto mt-4 box-border block h-min rounded-full border bg-zinc-950 px-4 py-2 font-bold lowercase text-zinc-50 transition duration-300 hover:border-zinc-950 hover:bg-zinc-50 hover:text-zinc-950 md:hidden'>
               Learn more
@@ -206,9 +206,9 @@ export default async function Home() {
                 </span>
               </h1>
               <p className=' mt-4 text-center text-zinc-50 md:text-justify'>
-                lorem ipsum dolor sit amet, consectetur adipiscing elit. sed efficitur molestie
-                diam, vitae viverra ipsum tincidunt nec .lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. sed efficitur molestie diam
+                {
+                  "I'm always looking for new opportunities, so feel free to reach out. I'm excited to connect and hear from you soon!"
+                }
               </p>
             </div>
             <div className='hidden grid-rows-[auto_1fr] rounded-lg border border-zinc-800 md:grid'>

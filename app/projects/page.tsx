@@ -31,7 +31,7 @@ export default async function Home() {
           </h1>
           <p className='mx-auto mb-12 max-w-2xl text-center text-lg font-medium text-zinc-400 md:text-xl'>
             {
-              "Here are the projects I've worked on. I'm always looking for new opportunities, so feel free to reach out!"
+              "Here's a look at the projects I've worked on during my years in computer science. Go ahead and check them out! 👇"
             }
           </p>
         </section>
