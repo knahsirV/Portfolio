@@ -79,7 +79,7 @@ export const Project = ({ name, description, github_url, project_url, topics }: 
   );
 };
 
-export const ProjectSkel = () => {
+const ProjectSkel = () => {
   return (
     <div className='aspect-square w-72 animate-pulse rounded-lg bg-zinc-900 p-6 opacity-25'>
       <div className='mb-4 flex items-center justify-between'>
@@ -95,5 +95,18 @@ export const ProjectSkel = () => {
         <div className='h-8 w-14 rounded-full bg-zinc-800' />
       </div>
     </div>
+  );
+};
+
+export const ProjectLoading = ({ numSkels }: { numSkels: number }) => {
+  const empty = Array(numSkels).fill("");
+  return (
+    <>
+      {empty.map((project) => (
+        <div key={project}>
+          <ProjectSkel />
+        </div>
+      ))}
+    </>
   );
 };

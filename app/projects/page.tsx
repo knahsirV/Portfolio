@@ -1,20 +1,7 @@
 import Navbar from "@/app/components/Navbar";
-import { Project, ProjectSkel } from "../components/Project";
+import { Project, ProjectLoading } from "../components/Project";
 import { Suspense } from "react";
 import { getProjects } from "../get-projects";
-
-const Loading = () => {
-  const empty = Array(9).fill("");
-  return (
-    <>
-      {empty.map((project) => (
-        <div key={project}>
-          <ProjectSkel />
-        </div>
-      ))}
-    </>
-  );
-};
 
 export default async function Home() {
   const projects = await getProjects();
@@ -36,7 +23,7 @@ export default async function Home() {
           </p>
         </section>
         <div className='flex flex-col flex-wrap items-center gap-4 md:flex-row md:items-start md:justify-around md:gap-8'>
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<ProjectLoading numSkels={9} />}>
             {projects.map((project: Project) => (
               <div key={project.name}>
                 <Project

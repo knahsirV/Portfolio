@@ -1,25 +1,13 @@
 import Navbar from "@/app/components/Navbar";
 import SkillsTabs from "@/app/components/SkillsTabs";
 import { ArrowPathIcon, ClipboardDocumentListIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
-import { Project, ProjectSkel } from "./components/Project";
+import { Project, ProjectLoading } from "./components/Project";
 import { getProjects } from "./get-projects";
 import ContactForm from "./components/ContactForm";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Github, Linkedin } from "react-bootstrap-icons";
 import ProjectScroll from "./components/ProjectScroll";
-
-const Loading = () => {
-  return (
-    <>
-      {[1, 2, 3].map((project) => (
-        <div key={project}>
-          <ProjectSkel />
-        </div>
-      ))}
-    </>
-  );
-};
 
 const quickActions = [
   {
@@ -173,7 +161,7 @@ export default async function Home() {
             className='scrollbar-hide mx-auto w-72 overflow-scroll rounded-lg md:w-auto'
           >
             <div className='flex snap-x items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-0'>
-              <Suspense fallback={<Loading />}>
+              <Suspense fallback={<ProjectLoading numSkels={3} />}>
                 {latestProjects.map((project: Project) => (
                   <div key={project.name}>
                     <Project
