@@ -1,4 +1,9 @@
-export const Languages = [
+export type Skill = {
+  name: string;
+  icon: string;
+};
+
+export const Languages: Skill[] = [
   {
     name: "Java",
     icon: "/java.svg",
@@ -41,7 +46,7 @@ export const Languages = [
   },
 ];
 
-export const Frameworks = [
+export const Frameworks: Skill[] = [
   {
     name: "React",
     icon: "/react.svg",
@@ -88,7 +93,7 @@ export const Frameworks = [
   },
 ];
 
-export const DevTools = [
+export const DevTools: Skill[] = [
   {
     name: "Git",
     icon: "/git-icon.svg",
