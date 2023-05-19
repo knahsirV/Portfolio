@@ -2,13 +2,7 @@
 import Link from "next/link";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
-
-const navs = [
-  { name: "Home", link: "/" },
-  { name: "About", link: "/about" },
-  { name: "Skills", link: "/#skills" },
-  { name: "Projects", link: "/projects" },
-];
+import { navs } from "../ConstData/navs";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
