@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import "./globals.css";
 import { Urbanist } from "next/font/google";
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`scroll-smooth bg-zinc-950 selection:bg-indigo-500 selection:text-white ${urbanist.className}`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

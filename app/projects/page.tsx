@@ -1,10 +1,8 @@
-import Navbar from "@/app/components/Navbar";
 import { Projects } from "../components/Project";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main className='mx-auto min-h-screen max-w-6xl p-6 lowercase md:w-3/4 md:p-10'>
         <section id='hero' className='mb-8 grid place-content-center md:mb-16'>
           <h1 className='mb-6 text-center text-5xl font-bold text-zinc-50 md:text-6xl'>
