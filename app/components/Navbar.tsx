@@ -28,11 +28,11 @@ const Navbar = () => {
         scrolled ? "border-zinc-900" : "border-transparent"
       } `}
     >
-      <div className='flex items-center justify-between'>
+      <div className='flex grid-cols-[300px_1fr_300px] items-center justify-between md:grid'>
         <h1 className='text-2xl font-bold tracking-widest text-zinc-50'>
           hire<span className='rounded-sm bg-zinc-50 text-zinc-950'>{"{Vrishank}"}</span>
         </h1>
-        <ul className='hidden md:flex'>
+        <ul className='mx-auto hidden md:flex'>
           {navs.map((nav, index) => (
             <li key={index}>
               <Link
@@ -44,10 +44,11 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <Link href='/#contact'>
-          <button className='box-border hidden rounded-md border bg-zinc-50 px-3 py-2 text-sm font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:block'>
-            Contact
-          </button>
+        <Link
+          href='/#contact'
+          className='ml-auto box-border hidden w-min rounded-md border bg-zinc-50 px-3 py-2 text-sm font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50 md:block'
+        >
+          Contact
         </Link>
         <button
           onClick={() => {
@@ -59,16 +60,19 @@ const Navbar = () => {
         </button>
       </div>
       <div className={`mt-4 h-screen md:hidden ${navbarOpen ? "block" : "hidden"}`}>
-        <Link href='/#contact'>
-          <button className='box-border w-full rounded-md border bg-zinc-50 py-2 text-lg font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50'>
-            Contact
-          </button>
+        <Link
+          href='/#contact'
+          onClick={() => setNavbarOpen(false)}
+          className='box-border block w-full rounded-md border bg-zinc-50 py-2 text-center text-lg font-bold lowercase tracking-widest transition duration-300 hover:border-zinc-50 hover:bg-zinc-950 hover:text-zinc-50'
+        >
+          Contact
         </Link>
         <ul className=''>
           {navs.map((nav, index) => (
             <li key={index}>
               <Link
                 href={nav.link}
+                onClick={() => setNavbarOpen(false)}
                 className='block border-b border-zinc-500 py-4 text-xl font-semibold lowercase text-zinc-500'
               >
                 <span>{nav.name}</span>
