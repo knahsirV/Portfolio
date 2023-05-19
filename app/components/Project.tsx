@@ -1,9 +1,10 @@
-"use client";
 import { ComputerDesktopIcon, WindowIcon } from "@heroicons/react/20/solid";
 import { Github } from "react-bootstrap-icons";
 import Link from "next/link";
 import { projectIcons } from "../ConstData/projectIcons";
-import { useState } from "react";
+import { Suspense } from "react";
+import { getProjects } from "../get-projects";
+import ProjectDescription from "./ProjectDescription";
 
 export type Project = {
   name: string;
@@ -14,8 +15,6 @@ export type Project = {
 };
 
 export const Project = ({ name, description, github_url, project_url, topics }: Project) => {
-  const [expanded, setExpanded] = useState(false);
-  const canExpland = description.length > 160;
   return (
     <div id={name} className='aspect-square w-72 snap-center rounded-lg bg-zinc-900 p-6'>
       <div className='mb-4 flex items-center justify-between'>
@@ -50,21 +49,7 @@ export const Project = ({ name, description, github_url, project_url, topics }: 
         </div>
       </div>
       <h2 className='mb-2 text-2xl font-bold text-zinc-50'>{name}</h2>
-      <p
-        className={` mb-1 ${
-          !expanded && "line-clamp-3"
-        } text-sm font-medium leading-loose text-zinc-50`}
-      >
-        {description}
-      </p>
-      <button
-        className={`mb-4 block text-sm font-extrabold ${
-          !canExpland && "invisible"
-        } text-zinc-600 transition duration-300 hover:text-zinc-50 `}
-        onClick={() => setExpanded(!expanded)}
-      >
-        view {expanded ? "less" : "more"}
-      </button>
+      <ProjectDescription description={description} />
       <div className='scrollbar-hide mt-auto flex gap-4 overflow-scroll rounded-lg'>
         {topics.map((topic) => (
           <span
@@ -100,15 +85,53 @@ const ProjectSkel = () => {
   );
 };
 
-export const ProjectLoading = ({ numSkels }: { numSkels: number }) => {
-  const empty = Array(numSkels).fill(0);
+export const ProjectLoading = () => {
+  const empty = Array(3).fill(0);
   return (
     <>
-      {empty.map((project, index) => (
+      {empty.map((_, index) => (
         <div key={index}>
           <ProjectSkel />
         </div>
       ))}
     </>
+  );
+};
+
+export const ProjectCards = async ({ numProjects }: { numProjects?: number }) => {
+  const projects = await getProjects(numProjects);
+  return (
+    <>
+      {projects.map((project: Project) => (
+        <div key={project.name}>
+          <Project
+            name={project.name}
+            description={project.description}
+            github_url={project.github_url}
+            project_url={project.project_url}
+            topics={project.topics}
+          />
+        </div>
+      ))}
+    </>
+  );
+};
+
+export const Projects = async ({ numProjects }: { numProjects?: number }) => {
+  const projects = await getProjects(numProjects);
+  return (
+    <Suspense fallback={<ProjectLoading />}>
+      {projects.map((project: Project) => (
+        <div key={project.name}>
+          <Project
+            name={project.name}
+            description={project.description}
+            github_url={project.github_url}
+            project_url={project.project_url}
+            topics={project.topics}
+          />
+        </div>
+      ))}
+    </Suspense>
   );
 };

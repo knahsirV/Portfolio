@@ -1,21 +1,9 @@
-import { getProjects } from "../get-projects";
-import { Project } from "./Project";
-
-export default async function LatestProjects() {
-  const latestProjects: Project[] = await getProjects(3);
+const LatestProjects = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      {latestProjects.map((project: Project) => (
-        <div key={project.name}>
-          <Project
-            name={project.name}
-            description={project.description}
-            github_url={project.github_url}
-            project_url={project.project_url}
-            topics={project.topics}
-          />
-        </div>
-      ))}
-    </>
+    <div className='flex snap-x items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-0'>
+      {children}
+    </div>
   );
-}
+};
+
+export default LatestProjects;

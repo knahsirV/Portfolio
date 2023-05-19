@@ -22,12 +22,12 @@ export const heroItem = {
 };
 
 export const otherSections = {
-  hidden: { opacity: 0, y: -20 },
+  hidden: { opacity: 0, y: -15 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1,
+      delay: 0.5,
     },
   },
 };
