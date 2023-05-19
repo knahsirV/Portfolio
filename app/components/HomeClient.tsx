@@ -166,11 +166,11 @@ const HomeClient = () => {
           all projects
         </Link>
       </motion.section>
+      <div id='contact' className='-mt-20  pt-20 ' />
       <motion.section
         initial='hidden'
         whileInView='visible'
         variants={otherSections}
-        id='contact'
         className='mt-48 md:flex md:gap-16'
       >
         <div className='grid-rows-auto-1fr md:grid md:w-1/2 md:gap-8'>
