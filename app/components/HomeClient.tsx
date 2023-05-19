@@ -83,7 +83,7 @@ const HomeClient = () => {
           <SkillsTabs />
         </motion.section>
       </motion.div>
-      <motion.section
+      {/* <motion.section
         id='about'
         initial='hidden'
         whileInView='visible'
@@ -126,7 +126,7 @@ const HomeClient = () => {
             </code>
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
       <motion.section
         initial='hidden'
         whileInView='visible'
