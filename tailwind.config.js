@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateRows: {
+        "auto-1fr": "auto 1fr",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -26,6 +29,11 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          }
+        }
       },
       animation: {
         "ping-once": "ping 1s forwards",
@@ -37,5 +45,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("prettier-plugin-tailwindcss")],
+  plugins: [require("prettier-plugin-tailwindcss"), require("tailwindcss-animation-delay")],
 };

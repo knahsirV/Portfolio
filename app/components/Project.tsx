@@ -84,26 +84,28 @@ const ProjectSkel = () => {
     <div className='aspect-square w-72 animate-pulse rounded-lg bg-zinc-900 p-6 opacity-25'>
       <div className='mb-4 flex items-center justify-between'>
         <div className='grid aspect-square w-10 place-items-center rounded-lg bg-zinc-800'></div>
-        <div className='h-4 w-12 rounded-full bg-zinc-800 ' />
+        <div className='h-6 w-20 rounded-full bg-zinc-800 ' />
+        <div className='h-6 w-20 rounded-full bg-zinc-800 ' />
       </div>
       <div className='mb-4 h-6 w-3/4 rounded-full bg-zinc-800' />
-      <div className='mb-4 h-3 w-2/3 rounded-full bg-zinc-800' />
       <div className='mb-4 h-3 w-5/6 rounded-full bg-zinc-800' />
-      <div className='mb-6 h-3 w-1/2 rounded-full bg-zinc-800' />
+      <div className='mb-4 h-3 w-full rounded-full bg-zinc-800' />
+      <div className='mb-6 h-3 w-2/3 rounded-full bg-zinc-800' />
       <div className='flex gap-4'>
         <div className='h-8 w-16 rounded-full bg-zinc-800' />
         <div className='h-8 w-14 rounded-full bg-zinc-800' />
+        <div className='h-8 w-20 rounded-full bg-zinc-800' />
       </div>
     </div>
   );
 };
 
 export const ProjectLoading = ({ numSkels }: { numSkels: number }) => {
-  const empty = Array(numSkels).fill("");
+  const empty = Array(numSkels).fill(0);
   return (
     <>
-      {empty.map((project) => (
-        <div key={project}>
+      {empty.map((project, index) => (
+        <div key={index}>
           <ProjectSkel />
         </div>
       ))}

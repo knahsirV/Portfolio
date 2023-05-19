@@ -1,7 +1,5 @@
 import { Octokit } from "octokit";
 
-export const revalidate = 10;
-
 const unmodifiableProjects: { [key: string]: { description: string; topics: string[] } } = {
   FamiLead: {
     description:
@@ -24,8 +22,14 @@ export const getProjects = async (numResults?: number) => {
         "X-GitHub-Api-Version": "2022-11-28",
       },
     })
-    .then((res: any) => res.data);
-
+    .then((res: any) => {
+      if (res.status === 200) {
+        return res.data;
+      }
+      if (res.status === 403) {
+        throw new Error("Failed to fetch projects");
+      }
+    });
   const projects = data
     .map((project: any) => ({
       name: project.name,

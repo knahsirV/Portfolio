@@ -1,10 +1,9 @@
 "use client";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/20/solid";
-import { Project } from "./Project";
 import { useState } from "react";
-import { dir } from "console";
 
-const ProjectScroll = ({ projects }: { projects: Project[] }) => {
+const ProjectScroll = () => {
+  const projects = [1, 2, 3];
   const [scrollIdx, setScrollIdx] = useState(0);
   const scroll = (direction: "left" | "right") => {
     const scrollTo = (scrollIdx + (direction === "left" ? -1 : 1)) * 314;
