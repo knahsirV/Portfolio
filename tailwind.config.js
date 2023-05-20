@@ -29,16 +29,27 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
-        'fade-in': {
-          '0%': {
-            opacity: '0',
-          }
-        }
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+        },
+        typing: {
+          from: {
+            width: 0,
+          },
+        },
+        link: {
+          "50%": {
+            "border-color": "transparent",
+          },
+        },
       },
       animation: {
         "ping-once": "ping 1s forwards",
         "bg-pan": "bg-pan 5s linear infinite",
         "fade-in-down": "fade-in-down 0.25s ease-in-out",
+        typing: "typing 2s steps(15), blink 0.5s step-end infinite alternate",
       },
       backgroundSize: {
         double: "200%",

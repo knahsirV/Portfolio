@@ -84,7 +84,7 @@ export default async function Home() {
             <SkillsTabs />
           </HeroMotionItem>
         </HeroMotionContainer>
-        {/* <OtherSectionsMotionContainer
+        <OtherSectionsMotionContainer
           id='about'
           className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'
         >
@@ -119,12 +119,16 @@ export default async function Home() {
               </div>
             </div>
             <div className='p-4'>
-              <code className=' font-semibold text-white'>
-                ~ % <span className='text-zinc-600'>vrishank/</span> git pull about_
+              <code className=' flex items-center gap-2 font-semibold text-zinc-50'>
+                ~ % <span className='text-zinc-600'>vrishank/</span>
+                <span className='inline-block w-[15ch] animate-typing overflow-x-hidden whitespace-nowrap border-r-2 border-white'>
+                  {" "}
+                  git pull about
+                </span>
               </code>
             </div>
           </div>
-        </OtherSectionsMotionContainer> */}
+        </OtherSectionsMotionContainer>
         <OtherSectionsMotionContainer id='latest-projects' className='mt-48 '>
           <div className='mb-6 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
