@@ -1,13 +1,13 @@
-export const heroContainer = {
+export const heroContainer = (staggerChildren: number) => ({
   hidden: { opacity: 0, y: -10 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      staggerChildren: 1.75,
+      staggerChildren: staggerChildren,
     },
   },
-};
+});
 
 export const heroItem = {
   hidden: { y: -20, opacity: 0 },
