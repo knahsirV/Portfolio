@@ -16,6 +16,7 @@ export default async function Home() {
   return (
     <>
       <main className='mx-auto min-h-screen max-w-6xl p-6 lowercase md:w-3/4 md:p-10'>
+        {/* Hero */}
         <HeroMotionContainer staggerChildren={1.75}>
           <HeroMotionItem section id='hero' className='mb-16 grid place-content-center md:h-[45vh]'>
             <div className='mb-6 flex flex-wrap items-center justify-center gap-4'>
@@ -84,7 +85,8 @@ export default async function Home() {
             <SkillsTabs />
           </HeroMotionItem>
         </HeroMotionContainer>
-        <OtherSectionsMotionContainer
+        {/* About */}
+        {/* <OtherSectionsMotionContainer
           id='about'
           className='mt-48 flex flex-col-reverse items-center gap-8 md:flex-row md:justify-center md:gap-20'
         >
@@ -128,7 +130,8 @@ export default async function Home() {
               </code>
             </div>
           </div>
-        </OtherSectionsMotionContainer>
+        </OtherSectionsMotionContainer> */}
+        {/* Latest Projects */}
         <OtherSectionsMotionContainer id='latest-projects' className='mt-48 '>
           <div className='mb-6 items-center justify-between md:flex'>
             <h1 className='text-center text-4xl font-bold text-zinc-50 md:text-left'>
@@ -162,6 +165,7 @@ export default async function Home() {
             all projects
           </Link>
         </OtherSectionsMotionContainer>
+        {/* Contact */}
         <div id='contact' className='-mt-20  pt-20 ' />
         <OtherSectionsMotionContainer className='mt-48 md:flex md:gap-16'>
           <div className='grid-rows-auto-1fr md:grid md:w-1/2 md:gap-8'>
