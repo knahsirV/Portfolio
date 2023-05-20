@@ -23,9 +23,14 @@ const Navbar = () => {
       } `}
     >
       <div className='flex grid-cols-[300px_1fr_300px] items-center justify-between md:grid'>
-        <h1 className='text-2xl font-bold tracking-widest text-zinc-50'>
-          hire<span className='rounded-sm bg-zinc-50 text-zinc-950'>{"{Vrishank}"}</span>
-        </h1>
+        <Link href='/' className='group text-2xl font-bold tracking-widest'>
+          <span className=' rounded-sm text-zinc-50 transition duration-300 group-hover:bg-zinc-50 group-hover:text-zinc-950'>
+            hire
+          </span>
+          <span className='rounded-sm bg-zinc-50 text-zinc-950 transition duration-300 group-hover:bg-zinc-950 group-hover:text-zinc-50'>
+            {"{Vrishank}"}
+          </span>
+        </Link>
         <ul className='mx-auto hidden md:flex'>
           {navs.map((nav, index) => (
             <li key={index}>
