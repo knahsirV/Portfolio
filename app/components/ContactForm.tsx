@@ -182,7 +182,7 @@ const ContactForm = () => {
                 setMessageFailed(false);
               }}
             >
-              send anothor message
+              send another message
             </button>
           </div>
         )}
