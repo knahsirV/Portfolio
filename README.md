@@ -23,4 +23,4 @@ I additionally added a contact form to my site, so that visitors of my site can 
 
 ## Future Plans:
 
-I plan on adding an about sections that goes into more detail about me so visitors have a glimpse into me life before getting to meet me and my work. I also plan to add filters to my projects page that allows visitors to filter projects by language, framework, etc.
+I plan on adding an about section that goes into more detail about me so visitors have a glimpse into me life before getting to meet me and my work. I also plan to add filters to my projects page that allows visitors to filter projects by language, framework, etc. As I discover more captivating UI and interactions, I plan to implement them into my site
