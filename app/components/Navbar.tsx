@@ -2,11 +2,13 @@
 import Link from "next/link";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { navs } from "../ConstData/navs";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -32,16 +34,21 @@ const Navbar = () => {
           </span>
         </Link>
         <ul className='mx-auto hidden md:flex'>
-          {navs.map((nav, index) => (
-            <li key={index}>
-              <Link
-                href={nav.link}
-                className='text rounded-lg px-3 py-2 font-semibold lowercase text-zinc-400 transition-all duration-200 hover:text-zinc-50'
-              >
-                <span>{nav.name}</span>
-              </Link>
-            </li>
-          ))}
+          {navs.map((nav, index) => {
+            const isActive = pathname === nav.link;
+            return (
+              <li key={index}>
+                <Link
+                  href={nav.link}
+                  className={`text rounded-lg px-3 py-2 font-semibold lowercase ${
+                    isActive ? "text-zinc-50 underline" : "text-zinc-400"
+                  }  transition-all duration-200 hover:text-zinc-50`}
+                >
+                  <span>{nav.name}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <Link
           href='/#contact'
@@ -67,17 +74,22 @@ const Navbar = () => {
           Contact
         </Link>
         <ul className=''>
-          {navs.map((nav, index) => (
-            <li key={index}>
-              <Link
-                href={nav.link}
-                onClick={() => setNavbarOpen(false)}
-                className='block border-b border-zinc-500 py-4 text-xl font-semibold lowercase text-zinc-500'
-              >
-                <span>{nav.name}</span>
-              </Link>
-            </li>
-          ))}
+          {navs.map((nav, index) => {
+            const isActive = pathname === nav.link;
+            return (
+              <li key={index}>
+                <Link
+                  href={nav.link}
+                  onClick={() => setNavbarOpen(false)}
+                  className={`block border-b border-zinc-500 py-4 text-xl font-semibold lowercase  ${
+                    isActive ? "text-zinc-50 underline" : "text-zinc-500"
+                  }`}
+                >
+                  <span>{nav.name}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
