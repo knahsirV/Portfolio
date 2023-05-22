@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { navs } from "../ConstData/navs";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
+  const [pathname, setPathname] = useState(usePathname());
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -25,7 +25,7 @@ const Navbar = () => {
       } `}
     >
       <div className='flex grid-cols-[300px_1fr_300px] items-center justify-between md:grid'>
-        <Link href='/' className='group text-2xl font-bold tracking-widest'>
+        <Link href='/#home' className='group text-2xl font-bold tracking-widest'>
           <span className=' rounded-sm text-zinc-50 transition duration-300 group-hover:bg-zinc-50 group-hover:text-zinc-950'>
             hire
           </span>
@@ -40,6 +40,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={nav.link}
+                  onClick={() => setPathname(nav.link)}
                   className={`text rounded-lg px-3 py-2 font-semibold lowercase ${
                     isActive ? "text-zinc-50 underline" : "text-zinc-400"
                   }  transition-all duration-200 hover:text-zinc-50`}
@@ -80,7 +81,10 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={nav.link}
-                  onClick={() => setNavbarOpen(false)}
+                  onClick={() => {
+                    setPathname(nav.link);
+                    setNavbarOpen(false);
+                  }}
                   className={`block border-b border-zinc-500 py-4 text-xl font-semibold lowercase  ${
                     isActive ? "text-zinc-50 underline" : "text-zinc-500"
                   }`}

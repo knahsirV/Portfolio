@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body
-        className={`min-h-screen scroll-smooth bg-zinc-950 selection:bg-indigo-500 selection:text-white ${urbanist.className}`}
+        className={`scroll-smooth bg-zinc-950 selection:bg-indigo-500 selection:text-white ${urbanist.className}`}
       >
         <Suspense fallback={<Blank />}>
           <Navbar />

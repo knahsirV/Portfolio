@@ -1,9 +1,10 @@
 import { HeroMotionContainer, HeroMotionItem } from "../components/Motion";
 import { Projects } from "../components/Project";
 
-export default function Home() {
+export default function AllProjects() {
   return (
     <>
+      <div className='h-10' />
       <HeroMotionContainer
         staggerChildren={0.5}
         main
@@ -16,7 +17,7 @@ export default function Home() {
               {" portfolio"}
             </span>
           </h1>
-          <p className='mx-auto mb-12 max-w-2xl text-center text-lg font-medium text-zinc-400 md:text-xl'>
+          <p className='mx-auto max-w-2xl text-center text-lg font-medium text-zinc-400 md:text-xl'>
             {
               "Here's a look at the projects I've worked on during my years in computer science. Go ahead and check them out! 👇"
             }
