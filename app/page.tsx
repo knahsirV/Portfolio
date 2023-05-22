@@ -183,7 +183,7 @@ export default async function Home() {
                 }
               </p>
             </div>
-            <div className='hidden grid-rows-auto-1fr rounded-lg border border-zinc-800 md:grid'>
+            <div className='hidden aspect-video grid-rows-auto-1fr rounded-lg border border-zinc-800 md:grid'>
               <div className='border-b border-zinc-800 p-3'>
                 <div className='flex gap-3'>
                   <div className='h-4 w-4 rounded-full bg-red-400'></div>
@@ -197,11 +197,8 @@ export default async function Home() {
                     <h1 className='mb-2 text-lg font-bold text-zinc-50'>Inbox</h1>
                     <div className='h-5 w-full rounded bg-zinc-700'></div>
                   </div>
-                  {[1, 2, 3].map((message) => (
-                    <div
-                      key={message}
-                      className='relative border-b border-b-zinc-800 p-6 last:border-none'
-                    >
+                  {[1, 2].map((message) => (
+                    <div key={message} className='relative border-b border-b-zinc-800 p-6'>
                       <div className='grid-cols-auto-1fr grid gap-2 '>
                         <div className='h-6 w-6 rounded-full bg-zinc-700' />
                         <div className='space-y-2'>
