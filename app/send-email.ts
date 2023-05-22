@@ -13,6 +13,8 @@ export const sendEmail = async (email: string, name: string, message: string) =>
     },
   });
 
+  const greeting = name.split(" ")[0];
+
   const mailToMe = {
     from: process.env.EMAIL,
     to: process.env.EMAIL,
@@ -23,9 +25,9 @@ export const sendEmail = async (email: string, name: string, message: string) =>
   const mailToVisitor = {
     from: process.env.EMAIL,
     to: email,
-    subject: `I've recieved you message, ${name}!`,
-    text: `Hi ${name}, thanks for reaching out! I'll get back to you as soon as I can. In the meantime, here's a copy of your message: ${message}`,
-    html: render(ToVisitor({ name: name, message: message })),
+    subject: `I've recieved you message, ${greeting}!`,
+    text: `Hi ${greeting}, thanks for reaching out! I'll get back to you as soon as I can. In the meantime, here's a copy of your message: ${message}`,
+    html: render(ToVisitor({ name: greeting, message: message })),
   };
   let res = { success: true, errorMessage: "none!" };
   try {
