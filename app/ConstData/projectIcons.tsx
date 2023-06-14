@@ -8,9 +8,14 @@ import {
   SparklesIcon,
   BuildingLibraryIcon,
   ShieldCheckIcon,
+  PlayIcon,
 } from "@heroicons/react/20/solid";
 
 export const projectIcons: { [key: string]: { bg: string; icon: JSX.Element } } = {
+  commentsense: {
+    bg: "from-[#cb2d3e] to-[#ef473a]",
+    icon: <PlayIcon className='h-6 w-6' />,
+  },
   devportfolio: {
     bg: "from-fuchsia-600 to-blue-600",
     icon: <FolderOpenIcon className='h-6 w-6 ' />,
