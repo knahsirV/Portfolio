@@ -19,7 +19,7 @@ export const quickActions = [
   },
   {
     name: "resume",
-    link: "https://homefromcollege.com/r/VV-749",
+    link: "https://homefromcollege.com/r/VV-2601",
     icon: <ClipboardDocumentListIcon className='h-4 w-4' />,
   },
 ];
