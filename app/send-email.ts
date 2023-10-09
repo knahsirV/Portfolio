@@ -25,7 +25,7 @@ export const sendEmail = async (email: string, name: string, message: string) =>
   const mailToVisitor = {
     from: process.env.EMAIL,
     to: email,
-    subject: `I've recieved you message, ${greeting}!`,
+    subject: `I've recieved your message, ${greeting}!`,
     text: `Hi ${greeting}, thanks for reaching out! I'll get back to you as soon as I can. In the meantime, here's a copy of your message: ${message}`,
     html: render(ToVisitor({ name: greeting, message: message })),
   };
