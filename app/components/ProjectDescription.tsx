@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ProjectDescription = ({ description }: { description: string }) => {
   const [expanded, setExpanded] = useState(false);
-  const canExpland = description.length > 160;
+  const canExpland = description?.length > 160;
   return (
     <>
       <p
