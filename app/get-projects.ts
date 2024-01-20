@@ -42,7 +42,7 @@ export const getProjects = async (numResults?: number) => {
         ? unmodifiableProjects[project.name].topics.sort()
         : project.topics,
     }))
-    .filter((project: any) => !new Set(["Gazelle", "knahsirV"]).has(project.name))
+    .filter((project: any) => !new Set(["Gazelle", "knahsirV", "SoYouThinkYouCanSing"]).has(project.name))
     .slice(0, numResults);
 
   return projects;
