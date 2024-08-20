@@ -3,24 +3,6 @@
 	"singleQuote": true,
 	"trailingComma": "none",
 	"printWidth": 100,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> dd3159b (all changes before react-email)
-	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
-	"overrides": [
-		{
-			"files": "*.svelte",
-			"options": {
-				"parser": "svelte"
-			}
-		}
-	]
-<<<<<<< HEAD
-=======
 	"plugins": ["prettier-plugin-svelte"],
 	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
->>>>>>> 9edad97 (bun sveltekit project created)
-=======
->>>>>>> dd3159b (all changes before react-email)
 }
