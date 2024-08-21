@@ -51,6 +51,7 @@
 	];
 </script>
 
+<<<<<<< HEAD
 <div
 	class=" mx-auto mb-10 w-full max-w-4xl px-6 selection:bg-red-300 selection:text-background md:p-10 md:pb-20"
 >
@@ -75,6 +76,16 @@
 			<div class="col-start-6 row-start-3"></div>
 			<div class="col-start-6 row-start-2"></div>
 		</div>
+=======
+<div class=" mx-auto w-full max-w-4xl p-10 pb-20 selection:bg-red-300 selection:text-background">
+	<h1
+		class="mb-8 inline-block bg-gradient-to-r from-red-300 to-orange-500 bg-clip-text p-1 text-5xl font-semibold tracking-wide text-transparent"
+	>
+		In case you're wondering,
+	</h1>
+	<div class="mb-16 flex gap-12">
+		<div class="aspect-square w-5/12 shrink-0 rounded-xl bg-muted"></div>
+>>>>>>> dd3159b (all changes before react-email)
 		<div class="space-y-4 text-muted-foreground *:leading-loose">
 			<p>
 				<span class="text-foreground">I'm Vrishank Viswanath.</span> I have been coding since 2019, my

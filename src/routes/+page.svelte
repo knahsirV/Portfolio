@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dd3159b (all changes before react-email)
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { Command, ArrowRight } from 'lucide-svelte/icons';
@@ -27,16 +30,26 @@
 				<kbd
 					class="mr-1.5 h-6 w-6 place-items-center rounded-sm bg-muted text-center text-base text-muted-foreground transition-colors group-hover:bg-foreground group-hover:text-background"
 				>
+<<<<<<< HEAD
 					K
 				</kbd>
 			</div>
 			<div class="block md:hidden">Tap &nbsp;</div>
+=======
+					V
+				</kbd>
+			</div>
+			<div class="block md:hidden">Tap</div>
+>>>>>>> dd3159b (all changes before react-email)
 			to start
 			<ArrowRight class="ml-1.5 size-4 transition-transform group-hover:translate-x-1" />
 		</Button>
 	</div>
 </div>
+<<<<<<< HEAD
 =======
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 >>>>>>> 9edad97 (bun sveltekit project created)
+=======
+>>>>>>> dd3159b (all changes before react-email)
