@@ -45,16 +45,16 @@
 			const commandPushed = (letter: string): boolean =>
 				e.key === letter && (e.metaKey || e.ctrlKey) && e.shiftKey;
 
-			if (commandPushed('e')) window.open('mailto:vrishank@utexas.edu');
-			if (commandPushed('r'))
+			if (commandPushed('1')) window.open('mailto:vrishank@utexas.edu');
+			if (commandPushed('1'))
 				window.open(
 					'https://docs.google.com/document/d/1YfUxro-xYViLZKnkdRNI3wH28u6jbkA4FBssYvDHDUo/edit?usp=sharing',
 					'_blank'
 				);
-			if (commandPushed('h')) navTo('/');
-			if (commandPushed('a')) navTo('/about');
-			if (commandPushed('p')) navTo('/projects');
-			if (commandPushed('c')) navTo('/contact');
+			if (commandPushed('3')) navTo('/');
+			if (commandPushed('4')) navTo('/about');
+			if (commandPushed('5')) navTo('/projects');
+			if (commandPushed('6')) navTo('/contact');
 		}
 
 		document.addEventListener('keydown', handleKeydown);
@@ -115,7 +115,7 @@
 			<Command.Item onSelect={() => window.open('mailto:vrishank@utexas.edu')}>
 				<MailPlusIcon class="mr-2 h-4 w-4" />
 				<span>Email me</span>
-				<Command.Shortcut>⌘ Shift E</Command.Shortcut>
+				<Command.Shortcut>⌘ Shift 1</Command.Shortcut>
 			</Command.Item>
 			<Command.Item
 				onSelect={() =>
@@ -126,7 +126,7 @@
 			>
 				<FileText class="mr-2 h-4 w-4" />
 				<span>View Resume</span>
-				<Command.Shortcut>⌘ Shift R</Command.Shortcut>
+				<Command.Shortcut>⌘ Shift 2</Command.Shortcut>
 			</Command.Item>
 		</Command.Group>
 		<Command.Separator />
@@ -134,22 +134,22 @@
 			<Command.Item onSelect={() => navTo('/')}>
 				<Home class="mr-2 h-4 w-4" />
 				<span>Home</span>
-				<Command.Shortcut>⌘ Shift H</Command.Shortcut>
+				<Command.Shortcut>⌘ Shift 3</Command.Shortcut>
 			</Command.Item>
 			<Command.Item onSelect={() => navTo('/about')}>
 				<UserRound class="mr-2 h-4 w-4" />
 				<span>About</span>
-				<Command.Shortcut>⌘ Shift A</Command.Shortcut>
+				<Command.Shortcut>⌘ Shift 4</Command.Shortcut>
 			</Command.Item>
 			<Command.Item onSelect={() => navTo('/projects')}>
 				<CodeXml class="mr-2 h-4 w-4" />
 				<span>Projects</span>
-				<Command.Shortcut>⌘ Shift P</Command.Shortcut>
+				<Command.Shortcut>⌘ Shift 5</Command.Shortcut>
 			</Command.Item>
 			<Command.Item onSelect={() => navTo('/contact')}>
 				<MessageSquare class="mr-2 h-4 w-4" />
 				<span>Contact</span>
-				<Command.Shortcut>⌘ Shift C</Command.Shortcut>
+				<Command.Shortcut>⌘ Shift 6</Command.Shortcut>
 			</Command.Item>
 		</Command.Group>
 	</Command.List>

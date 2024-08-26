@@ -9,7 +9,9 @@
 <div class="grid h-full place-items-center">
 	<div class="text-left">
 		<div class="mb-4 px-4">
-			<h1 class="mb-6 text-5xl font-semibold tracking-wider">Nice to meet you! I'm Vrishank</h1>
+			<h1 class="mb-6 text-4xl font-semibold tracking-wider md:text-5xl">
+				Nice to meet you! I'm Vrishank
+			</h1>
 			<p class=" mb-2 text-lg text-secondary-foreground">
 				Fullstack developer & Senior at UT Austin
 			</p>
