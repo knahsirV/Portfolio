@@ -51,14 +51,30 @@
 	];
 </script>
 
-<div class=" mx-auto w-full max-w-4xl p-10 pb-20 selection:bg-red-300 selection:text-background">
+<div
+	class=" mx-auto mb-10 w-full max-w-4xl px-6 selection:bg-red-300 selection:text-background md:p-10 md:pb-20"
+>
 	<h1
-		class="mb-8 inline-block bg-gradient-to-r from-red-300 to-orange-500 bg-clip-text p-1 text-5xl font-semibold tracking-wide text-transparent"
+		class="mb-4 inline-block bg-gradient-to-r from-red-300 to-orange-500 bg-clip-text p-1 text-5xl font-semibold tracking-wide text-transparent md:mb-8"
 	>
 		In case you're wondering,
 	</h1>
-	<div class="mb-16 flex gap-12">
-		<div class="aspect-square w-5/12 shrink-0 rounded-xl bg-muted"></div>
+	<div class="mb-16 gap-12 md:flex">
+		<!-- <div
+			style="background-image:url('/me.jpg')"
+			class="aspect-square w-5/12 shrink-0 rounded-xl bg-cover bg-center grayscale saturate-150"
+		></div> -->
+		<div
+			class=" mb-4 grid h-96 shrink-0 grid-cols-7 grid-rows-6 gap-2 rounded-xl bg-muted *:rounded-md *:bg-blue-400 md:w-5/12"
+		>
+			<div class="col-start-2 row-start-2"></div>
+			<div class="col-start-2 row-start-3"></div>
+			<div class="col-start-3 row-start-4"></div>
+			<div class="col-start-4 row-start-5"></div>
+			<div class="col-start-5 row-start-4"></div>
+			<div class="col-start-6 row-start-3"></div>
+			<div class="col-start-6 row-start-2"></div>
+		</div>
 		<div class="space-y-4 text-muted-foreground *:leading-loose">
 			<p>
 				<span class="text-foreground">I'm Vrishank Viswanath.</span> I have been coding since 2019, my

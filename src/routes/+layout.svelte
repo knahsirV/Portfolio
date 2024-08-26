@@ -4,13 +4,15 @@
 	import '../styles/font.css';
 	import '@fontsource-variable/outfit';
 	import { ModeWatcher } from 'mode-watcher';
-	import NavMenu from '$lib/components/nav-menu.svelte';
+	import Nav from '$lib/components/nav.svelte';
+	import Footer from '$lib/components/footer.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<div class="grid min-h-dvh grid-rows-[auto_1fr]">
-	<ModeWatcher />
-	<NavMenu />
+<ModeWatcher />
+<div class="grid min-h-dvh grid-rows-[auto_1fr_auto]">
+	<Nav />
 	{@render children()}
+	<Footer />
 </div>

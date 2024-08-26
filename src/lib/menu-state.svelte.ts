@@ -8,6 +8,7 @@ export default function getMenuState() {
 		set open(value) {
 			open = value;
 		},
-		toggle: () => (open = !open)
+		toggle: () => (open = !open),
+		close: () => (open = false)
 	};
 }
