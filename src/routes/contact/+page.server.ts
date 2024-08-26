@@ -2,7 +2,7 @@ import type { PageServerLoad, Actions } from './$types';
 import { superValidate } from 'sveltekit-superforms';
 import { contactSchema } from './schema';
 import { zod } from 'sveltekit-superforms/adapters';
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 
 export const load = (async () => {
 	return {
@@ -18,6 +18,10 @@ export const actions: Actions = {
 				form
 			});
 		}
+		redirect(
+			303,
+			`mailto:vrishank@utexas.edu?subject=${form.data.subject}&body=${form.data.message}`
+		);
 
 		return {
 			form
