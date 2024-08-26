@@ -26,10 +26,10 @@
 				<kbd
 					class="mr-1.5 h-6 w-6 place-items-center rounded-sm bg-muted text-center text-base text-muted-foreground transition-colors group-hover:bg-foreground group-hover:text-background"
 				>
-					V
+					K
 				</kbd>
 			</div>
-			<div class="block md:hidden">Tap</div>
+			<div class="block md:hidden">Tap &nbsp;</div>
 			to start
 			<ArrowRight class="ml-1.5 size-4 transition-transform group-hover:translate-x-1" />
 		</Button>
