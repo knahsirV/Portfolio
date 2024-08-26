@@ -44,9 +44,7 @@
 					><Calendar class="size-5" />
 					{date}</span
 				>
-				<div
-					class="no-scrollbar mb-4 flex max-w-xs gap-x-2 overflow-x-auto rounded-md text-sm *:shrink-0"
-				>
+				<div class=" mb-4 flex max-w-xs gap-x-2 overflow-x-auto rounded-md text-sm *:shrink-0">
 					{#each tech as t}
 						<span class="rounded-full bg-foreground px-3 py-0.5 text-background">{t}</span>
 					{/each}
