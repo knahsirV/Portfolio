@@ -65,7 +65,7 @@
 			<span class="text-muted-foreground">03</span>
 			<Form.Field {form} name="organization" class="w-full">
 				<Form.Control let:attrs>
-					<Form.Label class="text-xl">What's the name of your organization?</Form.Label>
+					<Form.Label class="text-xl">What's the name of your organization? (Optional)</Form.Label>
 
 					<Input
 						{...attrs}

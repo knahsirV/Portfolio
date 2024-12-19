@@ -27,9 +27,61 @@
 		{ name: 'Contact', path: '/contact' }
 	];
 
+	const baseCommands = [
+		{
+			name: 'Email me',
+			icon: MailPlusIcon,
+			type: 'quick action',
+			action: () => window.open('mailto:vrishank@utexas.edu'),
+			shortcut: 'E'
+		},
+		{
+			name: 'View Resume',
+			icon: FileText,
+			type: 'quick action',
+			action: () =>
+				window.open(
+					'https://docs.google.com/document/d/1YfUxro-xYViLZKnkdRNI3wH28u6jbkA4FBssYvDHDUo/edit?usp=sharing',
+					'_blank'
+				),
+			shortcut: 'R'
+		},
+		{ name: 'Home', icon: Home, type: 'nav', action: () => navTo('/'), shortcut: 'GH' },
+		{ name: 'About', icon: UserRound, type: 'nav', action: () => navTo('/about'), shortcut: 'GA' },
+		{
+			name: 'Projects',
+			icon: CodeXml,
+			type: 'nav',
+			action: () => navTo('/projects'),
+			shortcut: 'GP'
+		},
+		{
+			name: 'Contact',
+			icon: MessageSquare,
+			type: 'nav',
+			action: () => navTo('/contact'),
+			shortcut: 'GC'
+		}
+	];
+
 	let menuState = getMenuState();
-	let hovered = $state('');
 	let currentPage = $derived($page.url.pathname);
+	let searched = $state('');
+	let commands = $derived(
+		!searched
+			? baseCommands
+			: baseCommands.filter(
+					(c) =>
+						c.name.toLowerCase().includes(searched.toLowerCase()) ||
+						c.shortcut.toLowerCase().includes(searched.toLowerCase())
+				)
+	);
+
+	$effect(() => {
+		if (!menuState.open) {
+			searched = '';
+		}
+	});
 
 	function navTo(path: string) {
 		menuState.close();
@@ -42,19 +94,6 @@
 				e.preventDefault();
 				menuState.toggle();
 			}
-			const commandPushed = (letter: string): boolean =>
-				e.key === letter && (e.metaKey || e.ctrlKey) && e.shiftKey;
-
-			if (commandPushed('1')) window.open('mailto:vrishank@utexas.edu');
-			if (commandPushed('1'))
-				window.open(
-					'https://docs.google.com/document/d/1YfUxro-xYViLZKnkdRNI3wH28u6jbkA4FBssYvDHDUo/edit?usp=sharing',
-					'_blank'
-				);
-			if (commandPushed('3')) navTo('/');
-			if (commandPushed('4')) navTo('/about');
-			if (commandPushed('5')) navTo('/projects');
-			if (commandPushed('6')) navTo('/contact');
 		}
 
 		document.addEventListener('keydown', handleKeydown);
@@ -108,49 +147,27 @@
 </nav>
 
 <Command.Dialog bind:open={menuState.open}>
-	<Command.Input placeholder="Type a command or search..." />
+	<Command.Input bind:value={searched} placeholder="Type a command or search..." />
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
 		<Command.Group heading="Quick Actions">
-			<Command.Item onSelect={() => window.open('mailto:vrishank@utexas.edu')}>
-				<MailPlusIcon class="mr-2 h-4 w-4" />
-				<span>Email me</span>
-				<Command.Shortcut>⌘ Shift 1</Command.Shortcut>
-			</Command.Item>
-			<Command.Item
-				onSelect={() =>
-					window.open(
-						'https://docs.google.com/document/d/1YfUxro-xYViLZKnkdRNI3wH28u6jbkA4FBssYvDHDUo/edit?usp=sharing',
-						'_blank'
-					)}
-			>
-				<FileText class="mr-2 h-4 w-4" />
-				<span>View Resume</span>
-				<Command.Shortcut>⌘ Shift 2</Command.Shortcut>
-			</Command.Item>
+			{#each commands.filter((c) => c.type === 'quick action') as { name, icon: Icon, action, shortcut }}
+				<Command.Item onSelect={action}>
+					<Icon class="mr-2 h-4 w-4" />
+					<span>{name}</span>
+					<Command.Shortcut>{shortcut}</Command.Shortcut>
+				</Command.Item>
+			{/each}
 		</Command.Group>
 		<Command.Separator />
 		<Command.Group heading="Navigate">
-			<Command.Item onSelect={() => navTo('/')}>
-				<Home class="mr-2 h-4 w-4" />
-				<span>Home</span>
-				<Command.Shortcut>⌘ Shift 3</Command.Shortcut>
-			</Command.Item>
-			<Command.Item onSelect={() => navTo('/about')}>
-				<UserRound class="mr-2 h-4 w-4" />
-				<span>About</span>
-				<Command.Shortcut>⌘ Shift 4</Command.Shortcut>
-			</Command.Item>
-			<Command.Item onSelect={() => navTo('/projects')}>
-				<CodeXml class="mr-2 h-4 w-4" />
-				<span>Projects</span>
-				<Command.Shortcut>⌘ Shift 5</Command.Shortcut>
-			</Command.Item>
-			<Command.Item onSelect={() => navTo('/contact')}>
-				<MessageSquare class="mr-2 h-4 w-4" />
-				<span>Contact</span>
-				<Command.Shortcut>⌘ Shift 6</Command.Shortcut>
-			</Command.Item>
+			{#each commands.filter((c) => c.type === 'nav') as { name, icon: Icon, action, shortcut }}
+				<Command.Item onSelect={action}>
+					<Icon class="mr-2 h-4 w-4" />
+					<span>{name}</span>
+					<Command.Shortcut>{shortcut}</Command.Shortcut>
+				</Command.Item>
+			{/each}
 		</Command.Group>
 	</Command.List>
 </Command.Dialog>
