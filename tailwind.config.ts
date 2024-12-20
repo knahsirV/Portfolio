@@ -74,6 +74,13 @@ export default {
           "0%": { "background-position": "0 0" },
           "100%": { "background-position": "2.5rem 0" },
         },
+        bob: {
+          "0%, 100%": { transform: "translateY(15px)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+      },
+      animation: {
+        bob: "bob 4s ease-in-out infinite",
       },
     },
   },

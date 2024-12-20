@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
+  ArrowRightIcon,
   CopyIcon,
   FileTextIcon,
   GitHubLogoIcon,
@@ -9,7 +11,7 @@ import {
 export default function Home() {
   return (
     <>
-      <div className="relative h-svh overflow-hidden p-8">
+      <div className="relative flex h-svh flex-col overflow-hidden p-8">
         <h1 className="absolute left-[50%] top-[50%] -z-10 -translate-x-[50%] -translate-y-[50%] transform animate-[move-bg_3s_linear_infinite] bg-[radial-gradient(circle_at_center,#22c55e_0.04rem,transparent_0.04rem)] bg-[length:1.25rem_1.25rem] bg-clip-text pr-24 font-[family-name:var(--logoFont)] text-[20rem] font-bold italic -tracking-widest text-transparent md:text-[40rem]">
           vkv
         </h1>
@@ -55,6 +57,31 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+        <Image
+          width={100}
+          height={100}
+          alt="dot-chevron-down"
+          src="/dot-chevron-down.svg"
+          className="animate-bob mx-auto size-12 flex-1"
+        />
+      </div>
+      <div className="mx-auto mb-40 w-max space-y-6">
+        <p className="max-w-sm text-xl tracking-tight md:text-3xl">
+          Nice to meet you! Glad you&apos;d like to get to know me.
+        </p>
+        <p className="max-w-lg text-xl tracking-tight md:text-3xl">
+          I love bringing ideas to life, from napkin sketches to production,
+          whenever I get the chance.
+        </p>
+        <div className="flex">
+          <Button
+            variant={"link"}
+            className="ml-auto items-center p-0 text-xl [&_svg]:size-6"
+          >
+            Learn more about me
+            <ArrowRightIcon />
+          </Button>
         </div>
       </div>
     </>
