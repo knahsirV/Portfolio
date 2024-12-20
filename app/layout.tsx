@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} ${logoFont.variable} ${codeFont.variable} overscroll-none bg-bunker-950 bg-[url('/noise.png')] bg-repeat antialiased bg-blend-soft-light`}
+        className={`${font.className} ${logoFont.variable} ${codeFont.variable} fixed inset-0 overscroll-none bg-bunker-950 bg-[url('/noise.png')] bg-repeat antialiased bg-blend-soft-light`}
       >
         {children}
       </body>
