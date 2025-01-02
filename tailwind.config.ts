@@ -1,4 +1,8 @@
 import type { Config } from "tailwindcss";
+const {
+  default: flattenColorPalette,
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 export default {
   darkMode: ["class"],
@@ -72,7 +76,7 @@ export default {
       keyframes: {
         "move-bg": {
           "0%": { "background-position": "0 0" },
-          "100%": { "background-position": "2.5rem 0" },
+          "100%": { "background-position": "2rem 0" },
         },
         bob: {
           "0%, 100%": { transform: "translateY(15px)" },
@@ -89,5 +93,23 @@ export default {
     "prettier-plugin-tailwindcss",
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require("tailwindcss-animate"),
+    addVariablesForColors,
   ],
 } satisfies Config;
+
+function addVariablesForColors({
+  addBase,
+  theme,
+}: {
+  addBase: (base: Record<string, unknown>) => void;
+  theme: (path: string) => Record<string, string>;
+}) {
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

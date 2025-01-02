@@ -7,12 +7,38 @@ import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
+import { TechCard } from "../components/TechCard";
+
+type TechStack = {
+  name: string;
+  icon: string;
+};
+
+const techStack: TechStack[][] = [
+  [
+    { name: "TypeScript", icon: "/ts-icon.svg" },
+    { name: "React", icon: "/react-icon.svg" },
+  ],
+  [
+    { name: "Python", icon: "/python-icon.svg" },
+    { name: "Figma", icon: "/figma-icon.svg" },
+    { name: "Tailwind", icon: "/tailwind-icon.svg" },
+  ],
+  [
+    { name: "GCP", icon: "/gcp-icon.svg" },
+    { name: "Supabase", icon: "/supabase.svg" },
+  ],
+  [{ name: "Next.js", icon: "/nextjs2.svg" }],
+];
 
 export default function Home() {
   return (
-    <div className="absolute inset-0 overflow-auto">
+    <div className="h-screen overflow-auto">
       <div className="relative flex h-svh flex-col overflow-hidden p-8">
-        <h1 className="absolute left-[50%] top-[50%] -z-10 -translate-x-[50%] -translate-y-[50%] transform animate-[move-bg_3s_linear_infinite] bg-[radial-gradient(circle_at_center,#22c55e_0.04rem,transparent_0.04rem)] bg-[length:1.25rem_1.25rem] bg-clip-text pr-24 font-[family-name:var(--logoFont)] text-[20rem] font-bold italic -tracking-widest text-transparent md:text-[40rem]">
+        <h1
+          id="logo"
+          className="absolute left-[50%] top-[50%] -z-10 -translate-x-[50%] -translate-y-[50%] transform animate-[move-bg_4s_linear_infinite] bg-[radial-gradient(circle_at_center,#065f46_1px,transparent_1px)] bg-[length:1rem_1rem] bg-clip-text pr-24 font-[family-name:var(--logoFont)] text-[20rem] font-bold italic -tracking-widest text-transparent md:text-[40rem]"
+        >
           vkv
         </h1>
         <div className="grid h-[70vh] place-items-center">
@@ -36,7 +62,7 @@ export default function Home() {
                     <CopyIcon className="size-4" />
                   </div>
                 </div>
-                <Button className="hidden h-auto flex-shrink-0 rounded-sm bg-amber-300 font-semibold text-amber-950 hover:bg-amber-300/75 md:inline-flex">
+                <Button className="hidden h-auto flex-shrink-0 rounded-sm bg-amber-300 font-semibold text-amber-950 selection:bg-current hover:bg-amber-300/75 md:inline-flex">
                   <FileTextIcon />
                   Resume
                 </Button>
@@ -63,16 +89,16 @@ export default function Home() {
           height={100}
           alt="dot-chevron-down"
           src="/dot-chevron-down.svg"
-          className="animate-bob mx-auto size-12 flex-1"
+          className="mx-auto size-12 flex-1 animate-bob"
         />
       </div>
       <div className="mx-auto mb-40 space-y-6 p-8 md:w-max">
         <p className="max-w-sm text-xl tracking-tight md:text-3xl">
-          Nice to meet you! Glad you&apos;d like to get to know me.
+          Nice to meet you! Glad you&apos;d like to get to know me. :)
         </p>
         <p className="max-w-lg text-xl tracking-tight md:text-3xl">
-          I love bringing ideas to life, from napkin sketches to production,
-          whenever I get the chance.
+          I love building stuff when I&apos;m bored and working through the
+          end-to-end fullstack process.
         </p>
         <div className="flex">
           <Button
@@ -89,81 +115,43 @@ export default function Home() {
           <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
             Tech Stack
           </h1>
-          <p className="text-xl tracking-tight md:text-3xl">
-            Here are the technologies I&apos;ve used most because of work,
-            school, and personal projects
+          <p className="text-lg tracking-tight md:text-2xl">
+            Here&apos;s what I&apos;ve found myself using a lot as of late.
           </p>
         </div>
         <div className="mx-auto max-w-4xl space-y-8">
-          <div className="justify-center gap-8 space-y-8 md:flex md:space-y-0">
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="ts-icon"
-                src="/ts-icon.svg"
-                className="mx-auto size-24"
-              />
+          {techStack.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="justify-center gap-8 space-y-8 md:flex md:space-y-0"
+            >
+              {row.map((tech) => (
+                <TechCard key={tech.name} name={tech.name} icon={tech.icon} />
+              ))}
             </div>
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="react-icon"
-                src="/react-icon.svg"
-                className="mx-auto size-24"
-              />
+          ))}
+        </div>
+      </div>
+      <div className="mb-40 space-y-8 p-8 text-center">
+        <div className="mx-auto max-w-2xl space-y-8">
+          <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
+            Recent Projects
+          </h1>
+          <p className="text-lg tracking-tight md:text-2xl">
+            Here&apos;s what I&apos;ve found myself using a lot as of late.
+          </p>
+        </div>
+        <div className="mx-auto max-w-4xl space-y-8">
+          {techStack.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="justify-center gap-8 space-y-8 md:flex md:space-y-0"
+            >
+              {row.map((tech) => (
+                <TechCard key={tech.name} name={tech.name} icon={tech.icon} />
+              ))}
             </div>
-          </div>
-          <div className="justify-center gap-8 space-y-8 md:flex md:space-y-0">
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="python-icon"
-                src="/python-icon.svg"
-                className="mx-auto size-24"
-              />
-            </div>
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="java-icon"
-                src="/java-icon.svg"
-                className="mx-auto size-24"
-              />
-            </div>
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="csharp-icon"
-                src="/csharp-icon.svg"
-                className="mx-auto size-24"
-              />
-            </div>
-          </div>
-          <div className="justify-center gap-8 space-y-8 md:flex md:space-y-0">
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="gcp-icon"
-                src="/gcp-icon.svg"
-                className="mx-auto size-24"
-              />
-            </div>
-            <div className="grid h-48 w-full max-w-80 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5">
-              <Image
-                width={100}
-                height={100}
-                alt="postgres-icon"
-                src="/postgres-icon.svg"
-                className="mx-auto size-24"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

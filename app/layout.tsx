@@ -5,6 +5,7 @@ import {
   Geist_Mono as CodeFont,
 } from "next/font/google";
 import "./globals.css";
+// import { FollowerPointerCard } from "@/components/ui/following-pointer";
 
 const font = Font({
   variable: "--font",
@@ -35,8 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} ${logoFont.variable} ${codeFont.variable} fixed inset-0 overscroll-none bg-bunker-950 bg-[url('/noise.png')] bg-repeat antialiased bg-blend-soft-light`}
+        className={`${font.className} ${logoFont.variable} ${codeFont.variable} fixed inset-0 bg-bunker-950 bg-[url('/noise.png')] bg-repeat antialiased bg-blend-soft-light selection:bg-green-500 selection:text-bunker-950`}
       >
+        {/* <FollowerPointerCard>{children}</FollowerPointerCard> */}
         {children}
       </body>
     </html>
