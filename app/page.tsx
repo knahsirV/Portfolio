@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
   ArrowRightIcon,
-  CopyIcon,
   FileTextIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 import { TechCard } from "../components/TechCard";
+import EmailButton from "@/components/EmailButton";
+import Logo from "@/components/Logo";
 
 type TechStack = {
   name: string;
@@ -41,27 +42,18 @@ export default function Home() {
         >
           vkv
         </h1>
-        <div className="grid h-[70vh] place-items-center">
+        <div className="grid h-svh place-items-center">
           <div className="gap-8 space-y-2 text-center md:flex md:text-left">
-            <div className="mx-auto grid size-32 shrink-0 place-items-center rounded-full bg-green-500 bg-[url('/noise.png')] bg-contain bg-repeat bg-blend-soft-light md:size-48">
-              <h1 className="bg-bunker-950 bg-[url('/noise.png')] bg-contain bg-clip-text bg-repeat pr-2.5 font-[family-name:var(--logoFont)] text-5xl font-bold italic -tracking-widest text-transparent bg-blend-soft-light md:text-7xl">
-                vkv
-              </h1>
-            </div>
+            <Logo />
             <div className="space-y-4">
               <h1 className="text-3xl font-semibold uppercase tracking-tight text-green-500 md:text-5xl">
                 Hi! I&apos;m Vrishank
               </h1>
-              <p className="max-w-sm text-xl font-medium tracking-tight md:text-3xl">
-                Fullstack Engineer, Cyclist, Texas Ex, & Professional Eater
+              <p className="text-xl font-medium tracking-tight md:text-3xl">
+                Fullstack Engineer, Cyclist, Texas Ex
               </p>
               <div className="flex gap-2">
-                <div className="flex-1 rounded-sm bg-bunker-950 bg-[url('/noise.png')] bg-repeat bg-blend-soft-light">
-                  <div className="flex items-center justify-between gap-4 rounded-sm bg-bunker-800/15 px-4 py-2 font-[family-name:var(--codeFont)] text-sm md:text-base">
-                    <span>vrishank@vrishank.net</span>
-                    <CopyIcon className="size-4" />
-                  </div>
-                </div>
+                <EmailButton />
                 <Button className="hidden h-auto flex-shrink-0 rounded-sm bg-amber-300 font-semibold text-amber-950 selection:bg-current hover:bg-amber-300/75 md:inline-flex">
                   <FileTextIcon />
                   Resume
@@ -94,11 +86,11 @@ export default function Home() {
       </div>
       <div className="mx-auto mb-40 space-y-6 p-8 md:w-max">
         <p className="max-w-sm text-xl tracking-tight md:text-3xl">
-          Nice to meet you! Glad you&apos;d like to get to know me. :)
+          Nice to meet you! Glad you&apos;d like to get to know me.
         </p>
         <p className="max-w-lg text-xl tracking-tight md:text-3xl">
-          I love building stuff when I&apos;m bored and working through the
-          end-to-end fullstack process.
+          I love building stuff when I&apos;m bored and getting things from
+          design to deployment.
         </p>
         <div className="flex">
           <Button

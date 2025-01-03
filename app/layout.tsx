@@ -6,6 +6,8 @@ import {
 } from "next/font/google";
 import "./globals.css";
 // import { FollowerPointerCard } from "@/components/ui/following-pointer";
+import { Toaster } from "@/components/ui/toaster";
+import Navbar from "@/components/Navbar";
 
 const font = Font({
   variable: "--font",
@@ -36,10 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} ${logoFont.variable} ${codeFont.variable} fixed inset-0 bg-bunker-950 bg-[url('/noise.png')] bg-repeat antialiased bg-blend-soft-light selection:bg-green-500 selection:text-bunker-950`}
+        className={`${font.className} ${logoFont.variable} ${codeFont.variable} scrollbar-hide fixed inset-0 bg-bunker-950 bg-[url('/noise.png')] bg-repeat antialiased bg-blend-soft-light selection:bg-green-500 selection:text-bunker-950`}
       >
         {/* <FollowerPointerCard>{children}</FollowerPointerCard> */}
-        {children}
+        <div className="relative mx-auto max-w-screen-2xl">
+          <Navbar />
+          {children}
+        </div>
+        <Toaster />
       </body>
     </html>
   );

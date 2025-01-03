@@ -6,7 +6,7 @@ export const TechCard = ({ name, icon }: { name: string; icon: string }) => {
   return (
     <motion.div
       key={name}
-      className="bg relative grid h-40 w-full max-w-72 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/5"
+      className="relative grid h-48 w-full max-w-72 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/10"
       whileHover="hover"
       initial="initial"
     >
