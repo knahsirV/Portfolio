@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 const logoVariants = cva(
-  "grid shrink-0 place-items-center rounded-full bg-green-500 bg-[url('/noise.png')] bg-contain bg-repeat bg-blend-soft-light",
+  "grid shrink-0 place-items-center rounded-full bg-green-500",
   {
     variants: {
       size: {
@@ -16,7 +16,7 @@ const logoVariants = cva(
 );
 
 const textVariants = cva(
-  "bg-bunker-950 bg-[url('/noise.png')] bg-contain bg-clip-text bg-repeat text-center font-[family-name:var(--logoFont)] font-bold italic -tracking-widest text-transparent bg-blend-soft-light",
+  "text-bunker-950  text-center font-[family-name:var(--logoFont)] font-bold italic -tracking-widest",
   {
     variants: {
       size: {

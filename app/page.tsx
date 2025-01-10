@@ -34,7 +34,7 @@ const techStack: TechStack[][] = [
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-auto">
+    <div className="h-svh overflow-auto *:mx-auto *:max-w-screen-2xl">
       <div className="relative flex h-svh flex-col overflow-hidden p-8">
         <h1
           id="logo"
@@ -84,7 +84,7 @@ export default function Home() {
           className="mx-auto size-12 flex-1 animate-bob"
         />
       </div>
-      <div className="mx-auto mb-40 space-y-6 p-8 md:w-max">
+      <div className="mx-auto space-y-6 p-8 md:w-max">
         <p className="max-w-sm text-xl tracking-tight md:text-3xl">
           Nice to meet you! Glad you&apos;d like to get to know me.
         </p>
@@ -102,32 +102,20 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <div className="mb-40 space-y-8 p-8 text-center">
+      <div className="p-8">
+        <div className="mx-auto max-w-screen-md space-y-6">
+          <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
+            Recent Projects
+          </h1>
+          <p className="text-lg tracking-tight md:text-2xl">
+            Here&apos;s what I&apos;ve been up to recently.
+          </p>
+        </div>
+      </div>
+      <div className="space-y-8 p-8 text-center">
         <div className="mx-auto max-w-2xl space-y-8">
           <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
             Tech Stack
-          </h1>
-          <p className="text-lg tracking-tight md:text-2xl">
-            Here&apos;s what I&apos;ve found myself using a lot as of late.
-          </p>
-        </div>
-        <div className="mx-auto max-w-4xl space-y-8">
-          {techStack.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="justify-center gap-8 space-y-8 md:flex md:space-y-0"
-            >
-              {row.map((tech) => (
-                <TechCard key={tech.name} name={tech.name} icon={tech.icon} />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mb-40 space-y-8 p-8 text-center">
-        <div className="mx-auto max-w-2xl space-y-8">
-          <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
-            Recent Projects
           </h1>
           <p className="text-lg tracking-tight md:text-2xl">
             Here&apos;s what I&apos;ve found myself using a lot as of late.

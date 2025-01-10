@@ -16,9 +16,9 @@ const EmailButton = () => {
   return (
     <button
       onClick={copyToKeyboard}
-      className="flex-1 rounded-sm bg-bunker-950/90 bg-[url('/noise.png')] bg-repeat bg-blend-soft-light"
+      className="flex-1 rounded-sm bg-bunker-950"
     >
-      <div className="flex items-center justify-between gap-4 rounded-sm bg-bunker-800/15 px-4 py-2 font-[family-name:var(--codeFont)] text-sm md:text-base">
+      <div className="flex items-center justify-between gap-4 rounded-sm bg-bunker-800/10 px-4 py-2 font-[family-name:var(--codeFont)] text-sm md:text-base">
         <span>vrishank@vrishank.net</span>
         <CopyIcon className="size-4" />
       </div>

@@ -6,7 +6,7 @@ export const TechCard = ({ name, icon }: { name: string; icon: string }) => {
   return (
     <motion.div
       key={name}
-      className="relative grid h-48 w-full max-w-72 place-items-center rounded-xl border border-bunker-800/20 bg-bunker-800/10"
+      className="relative grid h-48 w-full max-w-72 place-items-center rounded-xl border border-bunker-900/15 bg-bunker-900/10"
       whileHover="hover"
       initial="initial"
     >
@@ -22,14 +22,14 @@ export const TechCard = ({ name, icon }: { name: string; icon: string }) => {
           height={100}
           alt={`${name.toLowerCase()}-icon`}
           src={icon}
-          className="mx-auto size-20"
+          className="mx-auto size-24"
         />
       </motion.div>
       <motion.span
-        className="absolute text-xl font-medium"
+        className="absolute text-2xl font-medium"
         variants={{
-          initial: { opacity: 0 },
-          hover: { opacity: 1 },
+          initial: { opacity: 0, scale: 1.5 },
+          hover: { opacity: 1, scale: 1 },
         }}
         transition={{ duration: 0.3 }}
       >
