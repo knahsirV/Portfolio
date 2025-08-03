@@ -19,7 +19,7 @@ const PlayingCard = ({
         className
       )}
     >
-      <div className='flex justify-between text-card '>
+      <div className='flex justify-between text-background '>
         <p>{name}</p>
         {/* <img src={img} alt='computer' className='size-5' /> */}
         <IconComponent size={"1.25rem"} color='currentColor' weight='fill' />
@@ -30,7 +30,7 @@ const PlayingCard = ({
           <IconComponent size={"6rem"} color='currentColor' weight='fill' />
         </div>
       </div>
-      <div className='flex justify-between text-card '>
+      <div className='flex justify-between text-background'>
         {/* <img src={img} alt='computer' className='size-5' /> */}
         <IconComponent size={"1.25rem"} color='currentColor' weight='fill' />
         <p className=' rotate-180'>{name}</p>
