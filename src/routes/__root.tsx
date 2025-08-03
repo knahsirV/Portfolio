@@ -24,11 +24,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <HeadContent />
       </head>
-      <body className='p-8'>
-        <NavBar />
-        {children}
+      <body>
+        <div className='p-8'>
+          <NavBar />
+          {children}
+        </div>
         <TanStackRouterDevtools position='bottom-right' />
         <Scripts />
       </body>
