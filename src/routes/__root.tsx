@@ -1,28 +1,23 @@
 /// <reference types="vite/client" />
-import * as React from 'react'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import {
-  HeadContent,
-  Link,
-  Outlet,
-  Scripts,
-  createRootRoute,
-} from '@tanstack/react-router'
-import appCss from '~/styles/app.css?url'
+import * as React from "react";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { HeadContent, Link, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
+import appCss from "~/styles/app.css?url";
+import NavBar from "~/components/NavBar";
 
 export const Route = createRootRoute({
   head: () => ({
-    links: [{ rel: 'stylesheet', href: appCss }],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   component: RootComponent,
-})
+});
 
 function RootComponent() {
   return (
     <RootDocument>
       <Outlet />
     </RootDocument>
-  )
+  );
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -31,16 +26,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
-        <div>
-          <Link to="/">Index</Link>
-          <Link to="/about">About</Link>
-        </div>
-
+      <body className='p-8'>
+        <NavBar />
         {children}
-        <TanStackRouterDevtools position="bottom-right" />
+        <TanStackRouterDevtools position='bottom-right' />
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

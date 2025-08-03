@@ -56,3 +56,7 @@
   font-style: normal;
   font-display: swap;
 }
+
+.recoleta {
+  font-family: "Recoleta", ui-sans-serif, sans-serif, system-ui;
+}
