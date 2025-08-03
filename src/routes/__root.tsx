@@ -27,7 +27,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <HeadContent />
       </head>
-      <body>
+      <body className=' selection:bg-black selection:text-foreground'>
         <div className='p-8'>
           <NavBar />
           {children}
