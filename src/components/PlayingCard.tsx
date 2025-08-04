@@ -15,12 +15,12 @@ const PlayingCard = ({
   return (
     <div
       className={cn(
-        " w-40 aspect-[5/7] rounded-xl p-4 flex flex-col font-mono uppercase text-[0.6rem]",
+        "w-30 lg:w-40 aspect-[5/7] rounded-xl p-4 flex flex-col font-mono uppercase text-[0.6rem]",
         className
       )}
     >
       <div className='flex justify-between text-background '>
-        <p>{name}</p>
+        <p className=''>{name}</p>
 
         <IconComponent size={"1.25rem"} color='currentColor' weight='fill' />
       </div>

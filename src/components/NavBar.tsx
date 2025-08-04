@@ -101,6 +101,15 @@ const NavBar = () => {
                 <MobileNavItem key={idx} route={route} />
               ))}
             </div>
+            <div className='flex mb-2 gap-4 font-mono items-center text-[.5rem]'>
+              <img src='/C1.svg' alt='' className='size-2' />
+              <span className='grow text-center uppercase'>Austin.2021</span>
+              <img src='/C1.svg' alt='' className='size-2 ' />
+              <img src='/C1.svg' alt='' className='size-2 grow' />
+              <img src='/C1.svg' alt='' className='size-2 ' />
+              <span className='grow text-center uppercase'>NYC.2025</span>
+              <img src='/C1.svg' alt='' className='size-2' />
+            </div>
           </DrawerContent>
         </Drawer>
       </div>
