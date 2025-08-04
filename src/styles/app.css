@@ -48,7 +48,7 @@
   --card-foreground: oklch(0.852 0.0205 100.63);
   --popover: oklch(0.269 0 0);
   --popover-foreground: oklch(0.852 0.0205 100.63);
-  --primary: oklch(0.8535 0.1649 147.17);
+  --primary: oklch(0.852 0.0205 100.63);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.852 0.0205 100.63);
@@ -74,8 +74,8 @@
   --sidebar-accent-foreground: oklch(0.852 0.0205 100.63);
   --sidebar-border: oklch(0.275 0 0);
   --sidebar-ring: oklch(0.439 0 0);
-  --font-sans: Outfit, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Outfit", ui-sans-serif, sans-serif, system-ui;
+  --font-serif: "Recoleta", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
   --radius: 0.25rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);

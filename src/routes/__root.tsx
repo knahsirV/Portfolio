@@ -27,12 +27,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <HeadContent />
       </head>
-      <body className=' selection:bg-black selection:text-foreground'>
+      <body className=' selection:bg-black selection:text-foreground '>
         <div className='p-8'>
           <NavBar />
           {children}
         </div>
-        <TanStackRouterDevtools position='bottom-right' />
+        {/* <TanStackRouterDevtools position='bottom-right' /> */}
         <Scripts />
       </body>
     </html>
